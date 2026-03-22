@@ -1,0 +1,21 @@
+# Alte Einzeldatei-Versionen
+FESTIVAL_PLANUNG.html
+FESTIVAL_PLANUNG_DRUCKVERSION.html
+FESTIVAL_PLANUNG_10_JAHRE_49ERS.md
+
+# System
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Claude
+.claude/
+
+# Cashless System (eigenes Projekt)
+Cashless system/
+
+# Protokolle (Excel, nicht fuer Web)
+Protokolle/
+
+# ZIP
+*.zip

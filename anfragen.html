@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anfragen-Generator - 49ers Festival 2027</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand"><img src="Logos/49ers_logo.jpg" alt="49ers" style="height:36px;border-radius:50%;margin-right:8px;vertical-align:middle"><span>Festival 2027</span></div>
+    <button class="burger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Uebersicht</a></li>
+      <li><a href="programm.html">Programm</a></li>
+      <li><a href="timeline.html">Timeline</a></li>
+      <li><a href="budget.html">Budget</a></li>
+      <li><a href="checkliste.html">Checkliste</a></li>
+      <li><a href="bezahlsystem.html">Bezahlsystem</a></li>
+      <li><a href="dienstleister.html">Dienstleister</a></li>
+      <li><a href="genehmigungen.html">Recht</a></li>
+      <li><a href="anfragen.html" class="active">Anfragen</a></li>
+      <li><a href="socialmedia.html">Social Media</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero" style="padding:30px 20px 24px">
+  <h1 style="font-size:clamp(22px,4vw,36px)">Anfragen-Generator</h1>
+  <p style="opacity:0.8;margin-top:8px">Erstelle professionelle Anfragen f&uuml;r Dienstleister basierend auf euren Festivaldaten</p>
+</div>
+
+<!-- ══════════════════ ECKDATEN ══════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Eure Festivaldaten</h2>
+      <div class="divider"></div>
+    </div>
+    <p style="text-align:center;color:var(--text-light);margin-bottom:24px">Diese Daten werden in die Anfragen eingesetzt. &Auml;ndere sie hier, um alle Anfragen anzupassen.</p>
+
+    <div class="card">
+      <div class="grid-2">
+        <div>
+          <label class="field-label">Verein / Club</label>
+          <input type="text" class="field-input" id="field-verein" value="Mofa Club 49ers Oppenrod">
+        </div>
+        <div>
+          <label class="field-label">Ansprechpartner</label>
+          <input type="text" class="field-input" id="field-ansprech" value="" placeholder="Name eingeben...">
+        </div>
+        <div>
+          <label class="field-label">E-Mail</label>
+          <input type="email" class="field-input" id="field-email" value="" placeholder="E-Mail eingeben...">
+        </div>
+        <div>
+          <label class="field-label">Telefon</label>
+          <input type="text" class="field-input" id="field-telefon" value="" placeholder="Telefon eingeben...">
+        </div>
+        <div>
+          <label class="field-label">Veranstaltung</label>
+          <input type="text" class="field-input" id="field-event" value="10-j&auml;hriges Jubil&auml;umsfestival Mofa Club 49ers">
+        </div>
+        <div>
+          <label class="field-label">Datum</label>
+          <input type="text" class="field-input" id="field-datum" value="07.-09. August 2027 (Fr-So)">
+        </div>
+        <div>
+          <label class="field-label">Location</label>
+          <input type="text" class="field-input" id="field-location" value="Motorsportarena Stefan Bellof, Stefan-Bellof-Str. 1, 35418 Buseck-Oppenrod">
+        </div>
+        <div>
+          <label class="field-label">Erwartete Besucher</label>
+          <input type="text" class="field-input" id="field-besucher" value="300-500">
+        </div>
+        <div>
+          <label class="field-label">Festzelt-Gr&ouml;&szlig;e</label>
+          <input type="text" class="field-input" id="field-zelt" value="ca. 15x20m (~300m&sup2;)">
+        </div>
+        <div>
+          <label class="field-label">Aufbau ab</label>
+          <input type="text" class="field-input" id="field-aufbau" value="Mittwoch, 06. August 2027">
+        </div>
+        <div>
+          <label class="field-label">Abbau bis</label>
+          <input type="text" class="field-input" id="field-abbau" value="Montag, 11. August 2027">
+        </div>
+        <div>
+          <label class="field-label">Strom vorhanden</label>
+          <input type="text" class="field-input" id="field-strom" value="Ja, Starkstrom (380V) im Paddock-Bereich">
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px">
+      <h3><span class="icon" style="background:#f9e8eb;color:var(--accent2)">&#128220;</span> Vereinsvorstellung</h3>
+      <p style="font-size:13px;color:var(--text-light);margin-bottom:8px">Dieser Text wird in jede Anfrage als Vorstellung eingebaut.</p>
+      <textarea class="comment-area" id="field-vorstellung" rows="5" style="min-height:100px" placeholder="Kurze Vorstellung eures Vereins...">Der Mofa Club 49ers Oppenrod wurde 2017 in Buseck-Oppenrod (Mittelhessen) gegr&uuml;ndet und ist eine Gemeinschaft von Mofa- und Moped-Enthusiasten. Seit 10 Jahren organisieren wir regelm&auml;&szlig;ig Ausfahrten, Schrauber-Treffen und lokale Events. Zum 10-j&auml;hrigen Jubil&auml;um 2027 planen wir unser bisher gr&ouml;&szlig;tes Event: ein 3-Tage-Festival mit Live-Musik, Mofa-Tour, Kartfahren, Camping und vielem mehr. Wir erwarten 300-500 Besucher aus der gesamten deutschsprachigen Mofa-Szene.</textarea>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ ANFRAGE-TEMPLATES ══════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Anfragen generieren</h2>
+      <div class="divider"></div>
+    </div>
+
+    <!-- A) Festzelt -->
+    <div class="card" style="margin-bottom:24px">
+      <h3><span class="icon" style="background:#f9e8eb;color:var(--accent2)">&#9978;</span> Festzelt-Anbieter</h3>
+      <div class="anfrage-text" id="anfrage-zelt"></div>
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <button class="fab-btn" onclick="copyAnfrage('anfrage-zelt')">&#128203; Kopieren</button>
+      </div>
+    </div>
+
+    <!-- B) Getraenkelieferant -->
+    <div class="card" style="margin-bottom:24px">
+      <h3><span class="icon" style="background:#e8f0fe;color:#1a56db">&#127867;</span> Getr&auml;nkelieferant / Brauerei</h3>
+      <div class="anfrage-text" id="anfrage-getraenke"></div>
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <button class="fab-btn" onclick="copyAnfrage('anfrage-getraenke')">&#128203; Kopieren</button>
+      </div>
+    </div>
+
+    <!-- C) Buehne / Veranstaltungstechnik -->
+    <div class="card" style="margin-bottom:24px">
+      <h3><span class="icon" style="background:#fef3c7;color:#d97706">&#127926;</span> B&uuml;hne / Veranstaltungstechnik (PA, Licht)</h3>
+      <div class="anfrage-text" id="anfrage-technik"></div>
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <button class="fab-btn" onclick="copyAnfrage('anfrage-technik')">&#128203; Kopieren</button>
+      </div>
+    </div>
+
+    <!-- D) Mobile Toiletten -->
+    <div class="card" style="margin-bottom:24px">
+      <h3><span class="icon" style="background:#f0fdf4;color:#16a34a">&#128701;</span> Mobile Toiletten</h3>
+      <div class="anfrage-text" id="anfrage-toiletten"></div>
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <button class="fab-btn" onclick="copyAnfrage('anfrage-toiletten')">&#128203; Kopieren</button>
+      </div>
+    </div>
+
+    <!-- E) Sanitaetsdienst -->
+    <div class="card" style="margin-bottom:24px">
+      <h3><span class="icon" style="background:#fef2f2;color:#dc2626">&#10010;</span> Sanit&auml;tsdienst</h3>
+      <div class="anfrage-text" id="anfrage-sanitaet"></div>
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <button class="fab-btn" onclick="copyAnfrage('anfrage-sanitaet')">&#128203; Kopieren</button>
+      </div>
+    </div>
+
+    <!-- F) Foodtrucks -->
+    <div class="card" style="margin-bottom:24px">
+      <h3><span class="icon" style="background:#fff7ed;color:#ea580c">&#127828;</span> Foodtrucks / Essensst&auml;nde</h3>
+      <div class="anfrage-text" id="anfrage-food"></div>
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <button class="fab-btn" onclick="copyAnfrage('anfrage-food')">&#128203; Kopieren</button>
+      </div>
+    </div>
+
+    <!-- G) Huepfburg / Attraktionen -->
+    <div class="card" style="margin-bottom:24px">
+      <h3><span class="icon" style="background:#faf5ff;color:#7c3aed">&#127944;</span> H&uuml;pfburg / Attraktionen</h3>
+      <div class="anfrage-text" id="anfrage-attraktionen"></div>
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <button class="fab-btn" onclick="copyAnfrage('anfrage-attraktionen')">&#128203; Kopieren</button>
+      </div>
+    </div>
+
+    <!-- H) Security -->
+    <div class="card" style="margin-bottom:24px">
+      <h3><span class="icon" style="background:#f1f5f9;color:#334155">&#128737;</span> Security</h3>
+      <div class="anfrage-text" id="anfrage-security"></div>
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <button class="fab-btn" onclick="copyAnfrage('anfrage-security')">&#128203; Kopieren</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Floating Action Panel -->
+<div class="fab-panel" id="fabPanel">
+  <div style="display:flex;gap:8px">
+    <button class="fab-btn fab-btn-save" onclick="exportJSON()" title="Status als JSON speichern">&#128190; Speichern</button>
+    <button class="fab-btn fab-btn-load" onclick="document.getElementById('jsonImport').click()" title="Status aus JSON laden">&#128194; Laden</button>
+    <input type="file" id="jsonImport" accept=".json" style="display:none" onchange="importJSON(event)">
+  </div>
+</div>
+
+<footer class="footer">10 Jahre Mofa Club 49ers &mdash; Festivalplanung 2027</footer>
+
+<script src="festival.js"></script>
+<script>
+function getField(id) {
+  return document.getElementById(id)?.value || '';
+}
+
+function generateAnfragen() {
+  const verein    = getField('field-verein');
+  const ansprech  = getField('field-ansprech');
+  const email     = getField('field-email');
+  const telefon   = getField('field-telefon');
+  const event     = getField('field-event');
+  const datum     = getField('field-datum');
+  const location  = getField('field-location');
+  const besucher  = getField('field-besucher');
+  const zelt      = getField('field-zelt');
+  const aufbau    = getField('field-aufbau');
+  const abbau     = getField('field-abbau');
+  const strom     = getField('field-strom');
+  const vorstellung = document.getElementById('field-vorstellung')?.value || '';
+
+  // Also load comments from localStorage for additional context
+  let comments = {};
+  try {
+    const saved = localStorage.getItem('festival49ers_comments');
+    if (saved) comments = JSON.parse(saved);
+  } catch(e) {}
+
+  const sig = `${ansprech || '[Name]'}
+${verein}${telefon ? '\nTel: ' + telefon : ''}${email ? '\nE-Mail: ' + email : ''}`;
+
+  const intro = vorstellung ? `\nKurz zu uns:\n${vorstellung}\n` : '';
+
+  // Zelt
+  document.getElementById('anfrage-zelt').innerHTML = `
+<pre>Sehr geehrte Damen und Herren,
+
+wir, der ${verein}, planen unser ${event} und suchen einen zuverl&auml;ssigen Partner f&uuml;r ein Festzelt.
+${intro}
+Eckdaten:
+- Veranstaltung: ${event}
+- Datum: ${datum}
+- Ort: ${location}
+- Erwartete Besucher: ${besucher}
+- Gew&uuml;nschte Zeltgr&ouml;&szlig;e: ${zelt}
+- Aufbau: ab ${aufbau}
+- Abbau: bis ${abbau}
+- Strom vor Ort: ${strom}
+
+Wir ben&ouml;tigen:
+- Festzelt mit Anbauteilen (B&uuml;hnenbereich + Thekenbereich)
+- Bierb&auml;nke und Tische (f&uuml;r ca. ${besucher} Besucher)
+- Beleuchtung im Zelt
+- Bodenplatten/Tanzboden (optional)
+
+K&ouml;nnten Sie uns bitte ein Angebot zukommen lassen? Gerne auch mit Auf- und Abbauservice.
+
+Vielen Dank im Voraus!
+
+Mit freundlichen Gr&uuml;&szlig;en
+${sig}</pre>`;
+
+  // Getraenke
+  document.getElementById('anfrage-getraenke').innerHTML = `
+<pre>Sehr geehrte Damen und Herren,
+
+wir, der ${verein}, veranstalten unser ${event} und suchen einen Getr&auml;nkelieferanten / Brauerei-Partner.
+${intro}
+Eckdaten:
+- Veranstaltung: ${event}
+- Datum: ${datum}
+- Ort: ${location}
+- Erwartete Besucher: ${besucher}
+- Ausschank im Festzelt (${zelt})
+
+Wir ben&ouml;tigen:
+- Fassbier (Pils) f&uuml;r 3 Tage Ausschank
+- Softdrinks / Wasser / Saft
+- Zapfanlage(n) mit CO2
+- K&uuml;hlwagen / K&uuml;hlm&ouml;glichkeit
+- Gl&auml;ser / Becher
+
+Wir sind offen f&uuml;r eine Brauerei-Kooperation (Exklusivrecht gegen Equipment-Bereitstellung). Liefern Sie auch auf Kommission?
+
+Bitte senden Sie uns ein Angebot mit Konditionen.
+
+Mit freundlichen Gr&uuml;&szlig;en
+${sig}</pre>`;
+
+  // Technik
+  document.getElementById('anfrage-technik').innerHTML = `
+<pre>Sehr geehrte Damen und Herren,
+
+f&uuml;r unser ${event} suchen wir einen Partner f&uuml;r B&uuml;hne und Veranstaltungstechnik.
+${intro}
+Eckdaten:
+- Datum: ${datum}
+- Ort: ${location} (Festzelt ${zelt})
+- Besucher: ${besucher}
+- Strom: ${strom}
+
+Wir ben&ouml;tigen:
+- B&uuml;hne (Ger&uuml;ststyle mit Dach, im Festzelt)
+- PA-Anlage f&uuml;r Live-Bands (2 Bands + DJ)
+- Lichtanlage (B&uuml;hne + Ambientebeleuchtung)
+- Mikrofone (Gesang + Moderation)
+- Ggf. Techniker f&uuml;r den Abend
+
+Programm: Freitagabend Band + DJ, Samstagabend Headliner-Band + DJ.
+
+K&ouml;nnten Sie uns ein Angebot machen? Gerne auch als Komplettpaket.
+
+Mit freundlichen Gr&uuml;&szlig;en
+${sig}</pre>`;
+
+  // Toiletten
+  document.getElementById('anfrage-toiletten').innerHTML = `
+<pre>Sehr geehrte Damen und Herren,
+
+f&uuml;r unser ${event} ben&ouml;tigen wir mobile Toiletten.
+${intro}
+Eckdaten:
+- Datum: ${datum} (Aufstellung ab ${aufbau}, Abholung ${abbau})
+- Ort: ${location}
+- Erwartete Besucher: ${besucher}
+- Zus&auml;tzlich Camping-Bereich (Fr-So)
+
+Bedarf:
+- Ca. 8 Damentoiletten
+- Ca. 3 Herrentoiletten + 6 Urinale
+- Mind. 1 barrierefreie Toilette
+- Reinigungsservice w&auml;hrend des Festivals
+- Ggf. Duschcontainer f&uuml;r Camping-Bereich
+
+Bitte senden Sie uns ein Angebot inkl. Lieferung, Reinigung und Abholung.
+
+Mit freundlichen Gr&uuml;&szlig;en
+${sig}</pre>`;
+
+  // Sanitaetsdienst
+  document.getElementById('anfrage-sanitaet').innerHTML = `
+<pre>Sehr geehrte Damen und Herren,
+
+f&uuml;r unser ${event} suchen wir einen Sanit&auml;tsdienst.
+${intro}
+Eckdaten:
+- Datum: ${datum}
+- Ort: ${location}
+- Erwartete Besucher: ${besucher}
+- Programm: Live-Musik, Kartfahren, Mofa-Tour, Camping
+- Alkoholausschank: Ja
+
+Wir ben&ouml;tigen sanit&auml;tsdienstliche Absicherung f&uuml;r alle 3 Tage, schwerpunktm&auml;&szlig;ig Samstag (Hauptprogramm + Abendveranstaltung).
+
+Bitte senden Sie uns ein Angebot mit Personalst&auml;rke und Kosten.
+
+Mit freundlichen Gr&uuml;&szlig;en
+${sig}</pre>`;
+
+  // Foodtrucks
+  document.getElementById('anfrage-food').innerHTML = `
+<pre>Hallo,
+
+wir veranstalten das ${event} und suchen Foodtrucks / Essensst&auml;nde.
+${intro}
+Eckdaten:
+- Datum: ${datum}
+- Ort: ${location}
+- Erwartete Besucher: ${besucher}
+- LKW-Zufahrt vorhanden, Strom vorhanden
+
+Wir suchen 2-3 verschiedene Angebote (z.B. Burger/W&uuml;rstchen, Pizza/Flammkuchen, internationale K&uuml;che).
+
+Konditionen: Standgeb&uuml;hr oder Umsatzbeteiligung -- gerne Vorschl&auml;ge.
+
+Das Bezahlsystem auf dem Festival ist bargeldlos (eigenes NFC-System). Details besprechen wir gerne pers&ouml;nlich.
+
+Mit freundlichen Gr&uuml;&szlig;en
+${sig}</pre>`;
+
+  // Attraktionen
+  document.getElementById('anfrage-attraktionen').innerHTML = `
+<pre>Sehr geehrte Damen und Herren,
+
+f&uuml;r unser ${event} suchen wir Attraktionen f&uuml;r das Kinderprogramm.
+${intro}
+Eckdaten:
+- Datum: ${datum} (Hauptprogramm Samstag)
+- Ort: ${location}
+- Au&szlig;enbereich, Strom vorhanden
+
+Wir suchen:
+- H&uuml;pfburg (f&uuml;r Samstagnachmittag)
+- Schie&szlig;bude (professionell, Jahrmarkt-Style)
+
+Bitte senden Sie uns ein Angebot inkl. Lieferung, Aufbau und Betreuung.
+
+Mit freundlichen Gr&uuml;&szlig;en
+${sig}</pre>`;
+
+  // Security
+  document.getElementById('anfrage-security').innerHTML = `
+<pre>Sehr geehrte Damen und Herren,
+
+f&uuml;r unser ${event} suchen wir Security-Personal.
+${intro}
+Eckdaten:
+- Datum: ${datum}
+- Ort: ${location}
+- Erwartete Besucher: ${besucher}
+- Camping auf dem Gel&auml;nde (Fr-So)
+- Alkoholausschank + Live-Musik bis open end
+
+Wir ben&ouml;tigen:
+- Einlasskontrolle (Freitag + Samstag)
+- Security f&uuml;r Samstagabend (Party bis open end)
+- Nachtwache / Gel&auml;ndesicherung (Fr-Nacht + Sa-Nacht)
+- Ggf. Jugendschutzkontrolle am Einlass
+
+Bitte senden Sie uns ein Angebot mit Personalst&auml;rke und Kosten.
+
+Mit freundlichen Gr&uuml;&szlig;en
+${sig}</pre>`;
+}
+
+function copyAnfrage(id) {
+  const el = document.getElementById(id);
+  const text = el.innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = el.parentElement.querySelector('.fab-btn');
+    const orig = btn.innerHTML;
+    btn.innerHTML = '&#10003; Kopiert!';
+    btn.style.background = 'var(--success)';
+    setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; }, 2000);
+  });
+}
+
+function saveFields() {
+  const fields = {};
+  document.querySelectorAll('.field-input').forEach(input => {
+    fields[input.id] = input.value;
+  });
+  // Auch Vorstellungstext speichern
+  const vorstellung = document.getElementById('field-vorstellung');
+  if (vorstellung) fields['field-vorstellung'] = vorstellung.value;
+  localStorage.setItem('festival49ers_fields', JSON.stringify(fields));
+}
+
+function loadFields() {
+  try {
+    const saved = localStorage.getItem('festival49ers_fields');
+    if (saved) {
+      const fields = JSON.parse(saved);
+      Object.entries(fields).forEach(([id, val]) => {
+        const el = document.getElementById(id);
+        if (el) el.value = val;
+      });
+    }
+  } catch(e) {}
+}
+
+document.querySelectorAll('.field-input').forEach(input => {
+  input.addEventListener('input', () => {
+    saveFields();
+    generateAnfragen();
+  });
+});
+
+// Vorstellungstext auch speichern und Anfragen neu generieren
+const vorstellungEl = document.getElementById('field-vorstellung');
+if (vorstellungEl) {
+  vorstellungEl.addEventListener('input', () => {
+    saveFields();
+    generateAnfragen();
+  });
+}
+
+loadFields();
+generateAnfragen();
+</script>
+</body>
+</html>

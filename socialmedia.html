@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Media Strategie - 49ers Festival 2027</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* ── SOCIAL MEDIA PAGE EXTRAS ── */
+  .hashtag-box {
+    background: var(--primary);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .hashtag {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: monospace;
+  }
+  .hashtag:hover { background: rgba(255,255,255,0.3); }
+  .hashtag-set { margin-bottom: 12px; }
+  .hashtag-set-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-light);
+    margin-bottom: 6px;
+  }
+  .hashtag-inline {
+    background: #f9e8eb;
+    color: var(--accent2);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-family: monospace;
+    display: inline-block;
+    margin: 3px;
+  }
+  .copy-btn {
+    background: var(--accent2);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+  }
+  .copy-btn:hover { background: var(--accent-bright); }
+  .copy-btn.copied { background: var(--success); }
+
+  /* Phase header badges */
+  .phase-badge {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 3px 10px;
+    border-radius: 50px;
+    margin-bottom: 6px;
+  }
+  .phase-badge.milestone { background: var(--warning); color: #fff; }
+  .phase-badge.live { background: var(--accent-bright); }
+  .phase-badge.done { background: var(--success); }
+
+  /* Posting frequency pill */
+  .freq-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f0fdf4;
+    border: 1px solid #86efac;
+    color: #166534;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+  }
+  .freq-pill.high { background: #fef2f2; border-color: #fca5a5; color: #991b1b; }
+
+  /* Weekly schedule grid */
+  .week-grid {
+    display: grid;
+    grid-template-columns: 100px repeat(7, 1fr);
+    gap: 4px;
+    font-size: 13px;
+  }
+  .week-grid-header {
+    background: var(--primary);
+    color: #fff;
+    text-align: center;
+    padding: 8px 4px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .week-grid-label {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--accent2);
+    text-transform: uppercase;
+    padding: 4px 8px;
+  }
+  .week-cell {
+    text-align: center;
+    padding: 8px 4px;
+    border-radius: 6px;
+    font-size: 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+  }
+  .week-cell.active {
+    background: #f9e8eb;
+    border-color: var(--accent2);
+    color: var(--primary);
+    font-weight: 700;
+  }
+  .week-cell.best {
+    background: var(--primary);
+    color: #fff;
+    font-weight: 700;
+    border-color: var(--primary);
+  }
+  .week-cell.daily {
+    background: #fef3c7;
+    border-color: var(--warning);
+    color: #92400e;
+    font-weight: 700;
+  }
+  .week-input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-family: inherit;
+    font-size: 12px;
+    color: var(--text);
+    padding: 0;
+    outline: none;
+  }
+  .week-input:focus {
+    background: #fff;
+    outline: 2px solid var(--accent);
+    border-radius: 3px;
+  }
+  .week-input::placeholder {
+    color: #ccc;
+  }
+
+  /* Idea cards */
+  .idea-list {
+    list-style: none;
+    padding: 0;
+  }
+  .idea-list li {
+    padding: 8px 12px;
+    border-left: 3px solid var(--accent2);
+    background: var(--bg);
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 8px;
+    font-size: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .idea-list li::before {
+    content: '▶';
+    color: var(--accent-bright);
+    font-size: 10px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* Budget input row */
+  .budget-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .budget-row:last-child { border-bottom: none; }
+  .budget-row-label { flex: 1; font-size: 14px; font-weight: 600; }
+  .budget-row-input {
+    width: 120px;
+    padding: 6px 8px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    background: #fff;
+    text-align: right;
+    transition: border-color 0.2s;
+  }
+  .budget-row-input:focus { outline: none; border-color: var(--accent); }
+  .budget-row-pct { min-width: 50px; font-size: 13px; color: var(--text-light); text-align: right; }
+
+  /* Platform icons (text-based) */
+  .platform-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+  .platform-ig { background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #fff; }
+  .platform-fb { background: #1877f2; color: #fff; }
+
+  /* Content pillar chips */
+  .pillar-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .pillar-chip {
+    background: #fff;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 16px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary);
+    min-width: 130px;
+    flex: 1;
+  }
+  .pillar-chip .pillar-icon { font-size: 22px; display: block; margin-bottom: 4px; }
+
+  @media (max-width: 768px) {
+    /* Keep the grid at a fixed minimum width so it scrolls horizontally
+       inside the .card (which gets overflow-x:auto from styles.css) */
+    .week-grid {
+      grid-template-columns: 90px repeat(7, minmax(70px, 1fr));
+      font-size: 11px;
+      min-width: 580px;
+    }
+    .week-grid-header { font-size: 10px; padding: 6px 2px; }
+    .week-cell { padding: 6px 2px; font-size: 11px; }
+    .budget-row { flex-wrap: wrap; }
+    .budget-row-input { width: 90px; }
+  }
+
+  @media (max-width: 480px) {
+    .pillar-chip { min-width: 100px; font-size: 12px; padding: 8px 12px; }
+    .hashtag { font-size: 12px; padding: 4px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand"><img src="Logos/49ers_logo.jpg" alt="49ers" style="height:36px;border-radius:50%;margin-right:8px;vertical-align:middle"><span>Festival 2027</span></div>
+    <button class="burger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Uebersicht</a></li>
+      <li><a href="programm.html">Programm</a></li>
+      <li><a href="timeline.html">Timeline</a></li>
+      <li><a href="budget.html">Budget</a></li>
+      <li><a href="checkliste.html">Checkliste</a></li>
+      <li><a href="bezahlsystem.html">Bezahlsystem</a></li>
+      <li><a href="dienstleister.html">Dienstleister</a></li>
+      <li><a href="genehmigungen.html">Recht</a></li>
+      <li><a href="anfragen.html">Anfragen</a></li>
+      <li><a href="socialmedia.html" class="active">Social Media</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero" style="padding:48px 20px 40px">
+  <h1 style="font-size:clamp(24px,4vw,42px)">Social Media Strategie</h1>
+  <p class="subtitle">17 Monate Hype-Aufbau &mdash; Von Community Building bis Festival-Countdown</p>
+  <div class="hero-badges">
+    <span class="hero-badge">&#128247; Instagram</span>
+    <span class="hero-badge">&#128101; Facebook</span>
+    <span class="hero-badge">&#128197; 17 Monate Plan</span>
+    <span class="hero-badge">&#127881; 07.-09. August 2027</span>
+  </div>
+</header>
+
+<!-- ══════════════════ SECTION 1: STRATEGIE-UEBERSICHT ══════════════════ -->
+<section class="section" id="strategie">
+  <div class="container">
+    <div class="section-header">
+      <h2>Strategie-&Uuml;bersicht</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="alert-box alert-info" style="margin-bottom:24px">
+      <span class="alert-icon">&#128293;</span>
+      <span><strong>17 Monate bis zum Festival!</strong> Jetzt ist der perfekte Zeitpunkt, um systematisch Reichweite aufzubauen. Ziel: Community wachsen lassen, Hype erzeugen, Tickets verkaufen.</span>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3><span class="icon" style="background:#f9e8eb;color:var(--accent2)">&#127919;</span> Ziel &amp; Konzept</h3>
+        <div class="data-row">
+          <span class="data-label">Ziel</span>
+          <span class="data-value">17 Monate Hype-Aufbau: Community &rarr; Ticket-Sales &rarr; Countdown &rarr; Live &rarr; Nachklang</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Prim&auml;r</span>
+          <span class="data-value"><span class="platform-icon platform-ig" style="font-size:12px;width:24px;height:24px;border-radius:6px">IG</span>&nbsp; <strong>Instagram</strong> &mdash; Haupt-Kanal f&uuml;r Hype &amp; Reichweite</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Sekund&auml;r</span>
+          <span class="data-value"><span class="platform-icon platform-fb" style="font-size:12px;width:24px;height:24px;border-radius:6px">FB</span>&nbsp; <strong>Facebook</strong> &mdash; Events, &auml;ltere Zielgruppe, Ads</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Tonalit&auml;t</span>
+          <span class="data-value">Authentisch &bull; Locker &bull; Szene-nah &bull; Humorvoll &bull; Stolz auf den Club</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Posting</span>
+          <span class="data-value">Phase 1-4: 3-5x/Woche &bull; Phase 5: T&auml;glich &bull; Festival-WE: Mehrmals t&auml;glich</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3><span class="icon" style="background:#fef3c7;color:#92400e">&#128218;</span> Content-Pillars</h3>
+        <div class="pillar-grid">
+          <div class="pillar-chip"><span class="pillar-icon">&#128690;</span>Club Life</div>
+          <div class="pillar-chip"><span class="pillar-icon">&#128295;</span>Schrauber-Content</div>
+          <div class="pillar-chip"><span class="pillar-icon">&#127882;</span>Festival-Teasers</div>
+          <div class="pillar-chip"><span class="pillar-icon">&#127916;</span>Behind-the-Scenes</div>
+          <div class="pillar-chip"><span class="pillar-icon">&#128101;</span>Community</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon" style="background:#f9e8eb;color:var(--accent-bright)">#</span> Unsere Hashtags</h3>
+      <p style="font-size:13px;color:var(--text-light);margin-bottom:12px">Diese Hashtags immer nutzen &mdash; Klicken zum Kopieren:</p>
+      <div class="hashtag-box">
+        <span class="hashtag" onclick="copyText(this)">#10Jahre49ers</span>
+        <span class="hashtag" onclick="copyText(this)">#MofaClub49ers</span>
+        <span class="hashtag" onclick="copyText(this)">#49ersFestival</span>
+        <span class="hashtag" onclick="copyText(this)">#MofaFestival2027</span>
+        <span class="hashtag" onclick="copyText(this)">#MofaLife</span>
+        <span class="hashtag" onclick="copyText(this)">#2Takt</span>
+        <span class="hashtag" onclick="copyText(this)">#MofaLiebe</span>
+        <span class="hashtag" onclick="copyText(this)">#MofaTreffen</span>
+        <span class="hashtag" onclick="copyText(this)">#SupportHighPerformanceLowSpeed</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ SECTION 2: CONTENT-KALENDER ══════════════════ -->
+<section class="section" id="kalender" style="background:#fff">
+  <div class="container">
+    <div class="section-header">
+      <h2>Content-Kalender &amp; Phasen</h2>
+      <div class="divider"></div>
+    </div>
+    <p style="text-align:center;color:var(--text-light);margin-bottom:32px">7 Phasen &mdash; Von heute bis nach dem Festival. Abhaken was erledigt ist.</p>
+
+    <div class="timeline">
+
+      <!-- PHASE 1 -->
+      <div class="timeline-item">
+        <div class="timeline-date">M&auml;rz &ndash; Juli 2026</div>
+        <div class="timeline-title">Phase 1: Grundlagen &mdash; &quot;Szene-Pr&auml;senz aufbauen&quot;</div>
+        <div class="freq-pill">&#128247; Posting-Frequenz: 3&ndash;4x pro Woche</div>
+        <p style="font-size:13px;color:var(--text-light);margin-bottom:12px">Regelm&auml;&szlig;ig posten, Community wachsen lassen, Szene-Vernetzung starten.</p>
+        <ul class="checklist">
+          <li><input type="checkbox" data-id="sm-p1-profil"> Instagram-Profil optimieren (Bio, Profilbild=Logo, Link in Bio, Highlights)<input type="text" class="item-comment" data-comment-id="note-sm-p1-profil" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p1-highlights"> Story-Highlights einrichten: &quot;Club&quot;, &quot;Schrauben&quot;, &quot;Touren&quot;, &quot;Festival 2027&quot;<input type="text" class="item-comment" data-comment-id="note-sm-p1-highlights" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p1-contentplan"> Content-Plan f&uuml;r 4 Wochen erstellen<input type="text" class="item-comment" data-comment-id="note-sm-p1-contentplan" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p1-schrauber"> W&ouml;chentlicher Schrauber-Content: Restauration, Tuning, Tipps<input type="text" class="item-comment" data-comment-id="note-sm-p1-schrauber" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p1-mitglieder"> Mitglieder-Vorstellung: &quot;Meet the 49ers&quot; Serie (1x/Woche)<input type="text" class="item-comment" data-comment-id="note-sm-p1-mitglieder" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p1-mofa"> &quot;Mofa der Woche&quot; Serie &mdash; Mitglieder stellen ihre Mofas vor<input type="text" class="item-comment" data-comment-id="note-sm-p1-mofa" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p1-throwback"> Throwback-Posts: Beste Momente aus 10 Jahren<input type="text" class="item-comment" data-comment-id="note-sm-p1-throwback" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p1-reels"> Reels produzieren: Fahraufnahmen, Schrauber-Timelapse, Sound-Clips<input type="text" class="item-comment" data-comment-id="note-sm-p1-reels" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p1-events"> Events 2026 besuchen und live posten (Tagging!)<input type="text" class="item-comment" data-comment-id="note-sm-p1-events" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p1-clubs"> Andere Mofa-Clubs folgen, kommentieren, vernetzen<input type="text" class="item-comment" data-comment-id="note-sm-p1-clubs" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p1-sticker"> Sticker-Tausch mit anderen Clubs dokumentieren<input type="text" class="item-comment" data-comment-id="note-sm-p1-sticker" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p1-savedate"> Erste &quot;Save the Date&quot; Teaser-Posts (noch ohne Details)<input type="text" class="item-comment" data-comment-id="note-sm-p1-savedate" placeholder="Kommentar..."></li>
+        </ul>
+        <div class="comment-block" style="margin-top:12px">
+          <label style="font-size:12px;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px">Kommentare / Notizen</label>
+          <textarea class="comment-area" data-comment-id="comment-sm-phase1" placeholder="Notizen zu Phase 1..."></textarea>
+        </div>
+      </div>
+
+      <!-- PHASE 2 -->
+      <div class="timeline-item milestone">
+        <div class="timeline-date">07. August 2026</div>
+        <div class="timeline-title">Phase 2: Early Bird Launch &mdash; &quot;1 Jahr vorher!&quot;</div>
+        <div class="alert-box alert-warning" style="margin-bottom:12px">
+          <span class="alert-icon">&#127881;</span>
+          <span><strong>Genau 1 Jahr vor dem Festival!</strong> Maximaler Impact &mdash; Early Bird Tickets zu 40&euro; launchen!</span>
+        </div>
+        <div class="freq-pill high">&#128293; T&auml;glich 2 Wochen, dann 4&ndash;5x/Woche</div>
+        <ul class="checklist">
+          <li><input type="checkbox" data-id="sm-p2-countdown"> &quot;Genau 1 Jahr!&quot; Countdown-Post (Reel + Story + Feed)<input type="text" class="item-comment" data-comment-id="note-sm-p2-countdown" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p2-earlybird"> Early-Bird-Ticket Ank&uuml;ndigung (Grafik mit Preis 40&euro;)<input type="text" class="item-comment" data-comment-id="note-sm-p2-earlybird" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p2-lineup"> Line-Up Ank&uuml;ndigung: Bands + DJ (mit K&uuml;nstler-Tagging)<input type="text" class="item-comment" data-comment-id="note-sm-p2-lineup" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p2-venue"> Location-Vorstellung: Drohnenaufnahmen/Fotos der Kartbahn<input type="text" class="item-comment" data-comment-id="note-sm-p2-venue" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p2-programm"> Programm-Teaser: &quot;Was euch erwartet&quot; Carousel-Post<input type="text" class="item-comment" data-comment-id="note-sm-p2-programm" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p2-fb-event"> Facebook-Event erstellen und pushen<input type="text" class="item-comment" data-comment-id="note-sm-p2-fb-event" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p2-stories"> T&auml;gliche Stories mit Countdown-Sticker<input type="text" class="item-comment" data-comment-id="note-sm-p2-stories" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p2-influencer"> Mofa-Influencer anschreiben und einladen (Mofa-Helden, Schreckschrauben etc.)<input type="text" class="item-comment" data-comment-id="note-sm-p2-influencer" placeholder="Kommentar..."></li>
+        </ul>
+        <div class="comment-block" style="margin-top:12px">
+          <label style="font-size:12px;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px">Kommentare / Notizen</label>
+          <textarea class="comment-area" data-comment-id="comment-sm-phase2" placeholder="Notizen zu Phase 2..."></textarea>
+        </div>
+      </div>
+
+      <!-- PHASE 3 -->
+      <div class="timeline-item">
+        <div class="timeline-date">August &ndash; Dezember 2026</div>
+        <div class="timeline-title">Phase 3: Aufmerksamkeit &mdash; &quot;Early Bird pushen&quot;</div>
+        <div class="freq-pill">&#128247; Posting-Frequenz: 3&ndash;4x pro Woche</div>
+        <p style="font-size:13px;color:var(--text-light);margin-bottom:12px">Steady Content, Ticket-Verkauf treiben, Community pflegen.</p>
+        <ul class="checklist">
+          <li><input type="checkbox" data-id="sm-p3-ticketcount"> Regelm&auml;&szlig;ige &quot;Nur noch X Early Birds!&quot; Posts<input type="text" class="item-comment" data-comment-id="note-sm-p3-ticketcount" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p3-eventrecaps"> Recaps von besuchten Mofa-Treffen 2026<input type="text" class="item-comment" data-comment-id="note-sm-p3-eventrecaps" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p3-sponsoren"> Sponsoren-Ank&uuml;ndigungen (wenn abgeschlossen)<input type="text" class="item-comment" data-comment-id="note-sm-p3-sponsoren" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p3-bts"> Behind-the-Scenes: Planungstreffen, Gel&auml;nde-Besuche<input type="text" class="item-comment" data-comment-id="note-sm-p3-bts" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p3-chronik"> &quot;10 Jahre 49ers&quot; Content-Serie: Pro Jahr 1 Post (10 Posts!)<input type="text" class="item-comment" data-comment-id="note-sm-p3-chronik" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p3-merch"> Merchandise-Teaser: Design-Vorschau, Vorbestellung<input type="text" class="item-comment" data-comment-id="note-sm-p3-merch" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p3-winter"> Winter-Content: Schrauber-Saison, Werkstatt-Impressionen<input type="text" class="item-comment" data-comment-id="note-sm-p3-winter" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p3-collab"> Collab-Posts mit anderen Clubs die ihr besucht habt<input type="text" class="item-comment" data-comment-id="note-sm-p3-collab" placeholder="Kommentar..."></li>
+        </ul>
+        <div class="comment-block" style="margin-top:12px">
+          <label style="font-size:12px;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px">Kommentare / Notizen</label>
+          <textarea class="comment-area" data-comment-id="comment-sm-phase3" placeholder="Notizen zu Phase 3..."></textarea>
+        </div>
+      </div>
+
+      <!-- PHASE 4 -->
+      <div class="timeline-item">
+        <div class="timeline-date">Januar &ndash; Mai 2027</div>
+        <div class="timeline-title">Phase 4: Vollgas &mdash; &quot;Marketing hochfahren&quot;</div>
+        <div class="freq-pill high">&#128293; Posting-Frequenz: 5x pro Woche</div>
+        <p style="font-size:13px;color:var(--text-light);margin-bottom:12px">Breitere Reichweite, Ads, Presse &mdash; jetzt auf die Tube dr&uuml;cken!</p>
+        <ul class="checklist">
+          <li><input type="checkbox" data-id="sm-p4-normalpreis"> Normalpreis-Tickets (50&euro;) ank&uuml;ndigen<input type="text" class="item-comment" data-comment-id="note-sm-p4-normalpreis" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p4-programm"> Programm-Details st&uuml;ckweise ver&ouml;ffentlichen<input type="text" class="item-comment" data-comment-id="note-sm-p4-programm" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p4-ads"> Instagram/Facebook Ads starten (Budget: 200&ndash;500&euro;, Radius 50&ndash;100km)<input type="text" class="item-comment" data-comment-id="note-sm-p4-ads" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p4-adszielgruppe"> Ads-Zielgruppe: 18&ndash;45 Jahre, Interessen Mofa/Moped/2Takt/Oldtimer/Festival<input type="text" class="item-comment" data-comment-id="note-sm-p4-adszielgruppe" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p4-bandintro"> Band-Vorstellungen: Jede Band eigener Post + Story<input type="text" class="item-comment" data-comment-id="note-sm-p4-bandintro" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p4-presse"> Pressemitteilung teilen (Lokalpresse-Berichterstattung posten)<input type="text" class="item-comment" data-comment-id="note-sm-p4-presse" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p4-messe"> Content von MOTORRAEDER Dortmund (Flyer verteilen!)<input type="text" class="item-comment" data-comment-id="note-sm-p4-messe" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p4-tageplan"> Tagesplan als Carousel/Infografik<input type="text" class="item-comment" data-comment-id="note-sm-p4-tageplan" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p4-camping"> Camping-Info Post: Was mitbringen, Regeln, Tipps<input type="text" class="item-comment" data-comment-id="note-sm-p4-camping" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p4-cashless"> Cashless-System erkl&auml;ren: &quot;So funktioniert unser Bezahlsystem&quot;<input type="text" class="item-comment" data-comment-id="note-sm-p4-cashless" placeholder="Kommentar..."></li>
+        </ul>
+        <div class="comment-block" style="margin-top:12px">
+          <label style="font-size:12px;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px">Kommentare / Notizen</label>
+          <textarea class="comment-area" data-comment-id="comment-sm-phase4" placeholder="Notizen zu Phase 4..."></textarea>
+        </div>
+      </div>
+
+      <!-- PHASE 5 -->
+      <div class="timeline-item milestone">
+        <div class="timeline-date">Juni &ndash; Juli 2027</div>
+        <div class="timeline-title">Phase 5: Countdown &mdash; &quot;Hype aufbauen&quot;</div>
+        <div class="freq-pill high">&#128293; T&auml;glich, mehrere Stories</div>
+        <p style="font-size:13px;color:var(--text-light);margin-bottom:12px">FOMO erzeugen &mdash; wer noch kein Ticket hat, MUSS jetzt eins kaufen!</p>
+        <ul class="checklist">
+          <li><input type="checkbox" data-id="sm-p5-countdown"> T&auml;glicher Countdown ab 30 Tage<input type="text" class="item-comment" data-comment-id="note-sm-p5-countdown" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p5-lineup"> Finales Line-Up + Tagesplan ver&ouml;ffentlichen<input type="text" class="item-comment" data-comment-id="note-sm-p5-lineup" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p5-anreise"> Anreise-Info: Adresse, Parken, Camping-Anmeldung<input type="text" class="item-comment" data-comment-id="note-sm-p5-anreise" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p5-packliste"> &quot;Festival-Packliste&quot; Carousel<input type="text" class="item-comment" data-comment-id="note-sm-p5-packliste" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p5-lastchance"> &quot;Last Chance&quot; Ticket-Posts<input type="text" class="item-comment" data-comment-id="note-sm-p5-lastchance" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p5-aufbau"> Aufbau-Dokumentation: Stories vom Zelt, B&uuml;hne, Gel&auml;nde<input type="text" class="item-comment" data-comment-id="note-sm-p5-aufbau" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p5-wetter"> Wetter-Updates (letzte Woche)<input type="text" class="item-comment" data-comment-id="note-sm-p5-wetter" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p5-helfer"> Helfer-Content: &quot;Unser Team&quot; Vorstellung<input type="text" class="item-comment" data-comment-id="note-sm-p5-helfer" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p5-hype"> Hype-Reels: Best-of vergangene Events + Festival-Vorfreude<input type="text" class="item-comment" data-comment-id="note-sm-p5-hype" placeholder="Kommentar..."></li>
+        </ul>
+        <div class="comment-block" style="margin-top:12px">
+          <label style="font-size:12px;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px">Kommentare / Notizen</label>
+          <textarea class="comment-area" data-comment-id="comment-sm-phase5" placeholder="Notizen zu Phase 5..."></textarea>
+        </div>
+      </div>
+
+      <!-- PHASE 6 -->
+      <div class="timeline-item milestone">
+        <div class="timeline-date">07.&ndash;09. August 2027</div>
+        <div class="timeline-title">Phase 6: Festival-Wochenende &mdash; &quot;LIVE!&quot;</div>
+        <div class="alert-box alert-danger" style="margin-bottom:12px">
+          <span class="alert-icon">&#127381;</span>
+          <span><strong>DAS IST ES!</strong> Live-Content, maximale Sichtbarkeit, G&auml;ste zum Posten motivieren!</span>
+        </div>
+        <ul class="checklist">
+          <li><input type="checkbox" data-id="sm-p6-live"> Permanente Story-Updates: Einlass, Stimmung, Bands, Essen<input type="text" class="item-comment" data-comment-id="note-sm-p6-live" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p6-reels"> Kurze Reels von Highlights (Mofas, Bands, Party)<input type="text" class="item-comment" data-comment-id="note-sm-p6-reels" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p6-hashtag"> Festival-Hashtag prominent aush&auml;ngen (#10Jahre49ers)<input type="text" class="item-comment" data-comment-id="note-sm-p6-hashtag" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p6-fotowand"> Foto-Wand/Selfie-Point mit 49ers Branding aufstellen<input type="text" class="item-comment" data-comment-id="note-sm-p6-fotowand" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p6-ugc"> Besucher-Content reposten (User Generated Content)<input type="text" class="item-comment" data-comment-id="note-sm-p6-ugc" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p6-fotograf"> Professioneller Fotograf + Videograf den ganzen Tag<input type="text" class="item-comment" data-comment-id="note-sm-p6-fotograf" placeholder="Kommentar..."></li>
+        </ul>
+        <div class="comment-block" style="margin-top:12px">
+          <label style="font-size:12px;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px">Kommentare / Notizen</label>
+          <textarea class="comment-area" data-comment-id="comment-sm-phase6" placeholder="Notizen zu Phase 6..."></textarea>
+        </div>
+      </div>
+
+      <!-- PHASE 7 -->
+      <div class="timeline-item">
+        <div class="timeline-date">August 2027 +</div>
+        <div class="timeline-title">Phase 7: Nachbereitung &mdash; &quot;Nachklang&quot;</div>
+        <p style="font-size:13px;color:var(--text-light);margin-bottom:12px">Den Hype verlängern und die Community f&uuml;r n&auml;chste Events warm halten.</p>
+        <ul class="checklist">
+          <li><input type="checkbox" data-id="sm-p7-danke"> Danke-Post an Besucher, Helfer, Sponsoren, Bands<input type="text" class="item-comment" data-comment-id="note-sm-p7-danke" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p7-galerie"> Best-of Fotogalerie (Carousel-Posts, 3&ndash;4 St&uuml;ck)<input type="text" class="item-comment" data-comment-id="note-sm-p7-galerie" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p7-aftermovie"> Aftermovie (2&ndash;3 Min) produzieren und posten<input type="text" class="item-comment" data-comment-id="note-sm-p7-aftermovie" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p7-zahlen"> &quot;In Zahlen&quot; Post: X Besucher, X Bier, X km Mofa-Tour<input type="text" class="item-comment" data-comment-id="note-sm-p7-zahlen" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p7-feedback"> Feedback einholen: Story-Umfrage &quot;Was war am besten?&quot;<input type="text" class="item-comment" data-comment-id="note-sm-p7-feedback" placeholder="Kommentar..."></li>
+          <li><input type="checkbox" data-id="sm-p7-next"> Teaser: &quot;Und n&auml;chstes Jahr...?&quot;<input type="text" class="item-comment" data-comment-id="note-sm-p7-next" placeholder="Kommentar..."></li>
+        </ul>
+        <div class="comment-block" style="margin-top:12px">
+          <label style="font-size:12px;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px">Kommentare / Notizen</label>
+          <textarea class="comment-area" data-comment-id="comment-sm-phase7" placeholder="Notizen zu Phase 7..."></textarea>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ SECTION 3: CONTENT-VORLAGEN ══════════════════ -->
+<section class="section" id="vorlagen">
+  <div class="container">
+    <div class="section-header">
+      <h2>Content-Vorlagen &amp; Ideen-Bibliothek</h2>
+      <div class="divider"></div>
+    </div>
+    <p style="text-align:center;color:var(--text-light);margin-bottom:32px">Konkrete Post-Ideen die ihr direkt umsetzen k&ouml;nnt.</p>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3><span class="icon" style="background:#f9e8eb;color:var(--accent-bright)">&#127909;</span> Reel-Ideen</h3>
+        <ul class="idea-list">
+          <li>Mofa-Startsequenz in Zeitlupe + Bass-Sound</li>
+          <li>Schrauber-Timelapse: Vergaser zerlegen in 30 Sekunden</li>
+          <li>Vorher/Nachher Restauration</li>
+          <li>Gruppenausfahrt mit Drohne</li>
+          <li>&quot;POV: Du f&auml;hrst mit den 49ers&quot;</li>
+          <li>Festival-Teaser: Schnelle Schnitte von Location + Mofas + Party</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><span class="icon" style="background:#fef3c7;color:#92400e">&#128247;</span> Story-Formate</h3>
+        <ul class="idea-list">
+          <li>Umfragen: &quot;Welches Mofa ist euer Favorit?&quot; (2 Bilder)</li>
+          <li>Quizze: &quot;Welches Baujahr?&quot;</li>
+          <li>Countdown-Sticker zum Festival</li>
+          <li>&quot;Frag uns was&quot; Q&amp;A Sessions</li>
+          <li>Behind-the-Scenes vom Planen</li>
+          <li>Sticker &quot;Erinnere mich&quot; f&uuml;r Event-Datum</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><span class="icon" style="background:#dcfce7;color:#166534">&#128444;</span> Feed-Post Formate</h3>
+        <ul class="idea-list">
+          <li>Carousel: 10 Slides = 10 Jahre = 10 beste Momente</li>
+          <li>Carousel: Festival-Programm Tag f&uuml;r Tag</li>
+          <li>Single Image: Mofa-Porn (sch&ouml;nes Foto, kurzer Text)</li>
+          <li>Infografik: &quot;So funktioniert unser Cashless-System&quot;</li>
+          <li>Zitat-Posts: Lustige Mofa-Spr&uuml;che</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:4px">
+      <h3><span class="icon" style="background:#f9e8eb;color:var(--accent2)">&#128172;</span> Caption-Vorlagen</h3>
+      <div class="grid-2">
+        <div>
+          <p style="font-size:12px;font-weight:700;text-transform:uppercase;color:var(--text-light);letter-spacing:0.5px;margin-bottom:8px">Early Bird Ankuendigung</p>
+          <div style="background:var(--bg);border-radius:8px;padding:14px;font-size:13px;line-height:1.7;border:1px solid var(--border)">
+            &#128690; <strong>SAVE THE DATE!</strong> Genau heute in einem Jahr steigen wir auf die Kartbahn! Das 10-j&auml;hrige Jubil&auml;umsfestival des Mofa Club 49ers &mdash; 07.-09. August 2027 in Buseck-Oppenrod.<br><br>
+            &#128243; Early Bird Tickets jetzt f&uuml;r nur <strong>40&euro;</strong> sichern! Link in der Bio &#128070;<br><br>
+            #10Jahre49ers #MofaFestival2027 #EarlyBird #SaveTheDate
+          </div>
+          <button class="copy-btn" onclick="copyCaption(this, 0)">&#128203; Caption kopieren</button>
+        </div>
+        <div>
+          <p style="font-size:12px;font-weight:700;text-transform:uppercase;color:var(--text-light);letter-spacing:0.5px;margin-bottom:8px">Mofa der Woche</p>
+          <div style="background:var(--bg);border-radius:8px;padding:14px;font-size:13px;line-height:1.7;border:1px solid var(--border)">
+            &#128295; <strong>Mofa der Woche!</strong> Diese Woche stellt [NAME] sein/ihr [MODELL] vor. Baujahr [JAHR], [PS/kW], und liebevoll restauriert von [NAME] selbst.<br><br>
+            Was ist euer Lieblingsdetail? &#128071; Schreibt es in die Kommentare!<br><br>
+            #MofaDerWoche #MofaClub49ers #MofaLiebe #2Takt #[MODELL]
+          </div>
+          <button class="copy-btn" onclick="copyCaption(this, 1)">&#128203; Caption kopieren</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ SECTION 4: POSTING-ZEITPLAN ══════════════════ -->
+<section class="section" id="zeitplan" style="background:#fff">
+  <div class="container">
+    <div class="section-header">
+      <h2>Posting-Zeitplan</h2>
+      <div class="divider"></div>
+    </div>
+    <p style="text-align:center;color:var(--text-light);margin-bottom:32px">Tragt eure besten Posting-Zeiten ein &mdash; basierend auf euren Instagram Insights.</p>
+
+    <div class="alert-box alert-info" style="margin-bottom:24px">
+      <span class="alert-icon">&#128161;</span>
+      <span><strong>So findet ihr eure besten Zeiten:</strong> Instagram &rarr; Profil &rarr; Professional Dashboard &rarr; Insights &rarr; Zielgruppe &rarr; "Aktivste Zeiten". Dort seht ihr genau, wann eure Follower online sind. Tragt diese Zeiten unten ein.</span>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon" style="background:#f9e8eb;color:var(--accent2)">&#128336;</span> Euer Posting-Plan</h3>
+      <p style="font-size:13px;color:var(--text-light);margin-bottom:16px">Klickt in die Felder und tragt eure Zeiten/Content-Typen ein. Wird automatisch gespeichert.</p>
+      <div class="week-grid" style="margin-top:16px">
+        <div></div>
+        <div class="week-grid-header">Mo</div>
+        <div class="week-grid-header">Di</div>
+        <div class="week-grid-header">Mi</div>
+        <div class="week-grid-header">Do</div>
+        <div class="week-grid-header">Fr</div>
+        <div class="week-grid-header">Sa</div>
+        <div class="week-grid-header">So</div>
+
+        <div class="week-grid-label">Feed-Post</div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-feed-mo" placeholder="&mdash;"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-feed-di" placeholder="&mdash;"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-feed-mi" placeholder="&mdash;"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-feed-do" placeholder="&mdash;"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-feed-fr" placeholder="&mdash;"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-feed-sa" placeholder="&mdash;"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-feed-so" placeholder="&mdash;"></div>
+
+        <div class="week-grid-label">Reels</div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-reel-mo" placeholder="&mdash;"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-reel-di" placeholder="&mdash;"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-reel-mi" placeholder="&mdash;"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-reel-do" placeholder="&mdash;"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-reel-fr" placeholder="&mdash;"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-reel-sa" placeholder="&mdash;"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-reel-so" placeholder="&mdash;"></div>
+
+        <div class="week-grid-label">Stories</div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-story-mo" placeholder="&mdash;"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-story-di" placeholder="&mdash;"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-story-mi" placeholder="&mdash;"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-story-do" placeholder="&mdash;"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-story-fr" placeholder="&mdash;"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-story-sa" placeholder="&mdash;"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-story-so" placeholder="&mdash;"></div>
+
+        <div class="week-grid-label">Aktivste Zeit</div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-best-mo" placeholder="z.B. 18-21h"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-best-di" placeholder="z.B. 18-21h"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-best-mi" placeholder="z.B. 18-21h"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-best-do" placeholder="z.B. 18-21h"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-best-fr" placeholder="z.B. 17-20h"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-best-sa" placeholder="z.B. 10-14h"></div>
+        <div class="week-cell"><input type="text" class="week-input sm-persist" data-sm-id="wk-best-so" placeholder="z.B. 10-14h"></div>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top:20px">
+      <div class="card" style="text-align:center;border-top:4px solid var(--accent-bright)">
+        <div style="font-size:32px;margin-bottom:8px">&#128247;</div>
+        <h3 style="font-size:16px;justify-content:center">Feed-Posts</h3>
+        <p style="font-size:14px;color:var(--text);margin:8px 0">Mind. <strong>3x pro Woche</strong></p>
+        <p style="font-size:13px;color:var(--text-light)">Zu euren aktivsten Zeiten posten<br>(siehe Instagram Insights)</p>
+      </div>
+      <div class="card" style="text-align:center;border-top:4px solid var(--warning)">
+        <div style="font-size:32px;margin-bottom:8px">&#127909;</div>
+        <h3 style="font-size:16px;justify-content:center">Reels</h3>
+        <p style="font-size:14px;color:var(--text);margin:8px 0">Mind. <strong>2x pro Woche</strong></p>
+        <p style="font-size:13px;color:var(--text-light)">H&ouml;chste organische Reichweite<br>Reels &gt; Feed &gt; Stories</p>
+      </div>
+      <div class="card" style="text-align:center;border-top:4px solid var(--success)">
+        <div style="font-size:32px;margin-bottom:8px">&#128248;</div>
+        <h3 style="font-size:16px;justify-content:center">Stories</h3>
+        <p style="font-size:14px;color:var(--text);margin:8px 0"><strong>T&auml;glich</strong></p>
+        <p style="font-size:13px;color:var(--text-light)">H&auml;lt euch im Feed oben<br>Interaktion durch Umfragen/Quizze</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ SECTION 5: HASHTAG-STRATEGIE ══════════════════ -->
+<section class="section" id="hashtags">
+  <div class="container">
+    <div class="section-header">
+      <h2>Hashtag-Strategie</h2>
+      <div class="divider"></div>
+    </div>
+    <p style="text-align:center;color:var(--text-light);margin-bottom:32px">Organisierte Hashtag-Sets zum Kopieren und Einf&uuml;gen.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3><span class="icon" style="background:#f9e8eb;color:var(--accent-bright)">#</span> Eigene Hashtags</h3>
+        <p style="font-size:13px;color:var(--text-light);margin-bottom:12px">&#128197; <strong>Immer verwenden!</strong> Bei jedem Post.</p>
+        <div class="hashtag-set">
+          <span class="hashtag-inline">#10Jahre49ers</span>
+          <span class="hashtag-inline">#MofaClub49ers</span>
+          <span class="hashtag-inline">#49ersFestival</span>
+          <span class="hashtag-inline">#49ersOppenrod</span>
+          <span class="hashtag-inline">#SupportHighPerformanceLowSpeed</span>
+        </div>
+        <button class="copy-btn" onclick="copyHashtags(this, 'own')">&#128203; Alle kopieren</button>
+        <span id="own-hashtags" style="display:none">#10Jahre49ers #MofaClub49ers #49ersFestival #49ersOppenrod #SupportHighPerformanceLowSpeed</span>
+      </div>
+
+      <div class="card">
+        <h3><span class="icon" style="background:#fef3c7;color:#92400e">&#128690;</span> Szene-Hashtags</h3>
+        <p style="font-size:13px;color:var(--text-light);margin-bottom:12px">&#128260; <strong>Abwechselnd verwenden</strong> &mdash; 5-8 pro Post.</p>
+        <div class="hashtag-set">
+          <span class="hashtag-inline">#MofaLife</span>
+          <span class="hashtag-inline">#2Takt</span>
+          <span class="hashtag-inline">#MofaLiebe</span>
+          <span class="hashtag-inline">#MofaTreffen</span>
+          <span class="hashtag-inline">#Mofaleben</span>
+          <span class="hashtag-inline">#Mopedliebe</span>
+          <span class="hashtag-inline">#ZweiTaktPower</span>
+          <span class="hashtag-inline">#Mofakultur</span>
+          <span class="hashtag-inline">#Rollerszene</span>
+          <span class="hashtag-inline">#MofaCommunity</span>
+        </div>
+        <button class="copy-btn" onclick="copyHashtags(this, 'szene')">&#128203; Alle kopieren</button>
+        <span id="szene-hashtags" style="display:none">#MofaLife #2Takt #MofaLiebe #MofaTreffen #Mofaleben #Mopedliebe #ZweiTaktPower #Mofakultur #Rollerszene #MofaCommunity</span>
+      </div>
+
+      <div class="card">
+        <h3><span class="icon" style="background:#f0fdf4;color:#166534">&#127882;</span> Festival-Hashtags</h3>
+        <p style="font-size:13px;color:var(--text-light);margin-bottom:12px">&#127882; <strong>Ab Early Bird Launch</strong> dauerhaft nutzen.</p>
+        <div class="hashtag-set">
+          <span class="hashtag-inline">#MofaFestival2027</span>
+          <span class="hashtag-inline">#MofaFestival</span>
+          <span class="hashtag-inline">#OpenAir2027</span>
+          <span class="hashtag-inline">#Festivallife</span>
+          <span class="hashtag-inline">#Festivalsommer</span>
+        </div>
+        <button class="copy-btn" onclick="copyHashtags(this, 'festival')">&#128203; Alle kopieren</button>
+        <span id="festival-hashtags" style="display:none">#MofaFestival2027 #MofaFestival #OpenAir2027 #Festivallife #Festivalsommer</span>
+      </div>
+
+      <div class="card">
+        <h3><span class="icon" style="background:#eff6ff;color:#1e40af">&#128205;</span> Lokale Hashtags</h3>
+        <p style="font-size:13px;color:var(--text-light);margin-bottom:12px">&#128205; <strong>F&uuml;r lokale Reichweite</strong> in der Region.</p>
+        <div class="hashtag-set">
+          <span class="hashtag-inline">#Mittelhessen</span>
+          <span class="hashtag-inline">#Buseck</span>
+          <span class="hashtag-inline">#Oppenrod</span>
+          <span class="hashtag-inline">#LandkreisGiessen</span>
+          <span class="hashtag-inline">#Hessen</span>
+        </div>
+        <button class="copy-btn" onclick="copyHashtags(this, 'lokal')">&#128203; Alle kopieren</button>
+        <span id="lokal-hashtags" style="display:none">#Mittelhessen #Buseck #Oppenrod #LandkreisGiessen #Hessen</span>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:4px">
+      <h3><span class="icon" style="background:#f9e8eb;color:var(--accent2)">&#128203;</span> Kompletter Hashtag-Block</h3>
+      <p style="font-size:13px;color:var(--text-light);margin-bottom:12px">Alle Hashtags f&uuml;r einen Festival-Post &mdash; einfach kopieren:</p>
+      <div style="background:var(--bg);border-radius:8px;padding:16px;font-size:13px;line-height:2;border:1px solid var(--border);font-family:monospace" id="full-hashtag-block">
+        #10Jahre49ers #MofaClub49ers #49ersFestival #49ersOppenrod #SupportHighPerformanceLowSpeed #MofaFestival2027 #MofaFestival #MofaLife #2Takt #MofaLiebe #MofaTreffen #Mofaleben #Mopedliebe #ZweiTaktPower #Mofakultur #MofaCommunity #Mittelhessen #Buseck #Hessen #OpenAir2027 #Festivallife
+      </div>
+      <button class="copy-btn" style="margin-top:10px" onclick="copyHashtags(this, 'full')">&#128203; Kompletten Block kopieren</button>
+      <span id="full-hashtags" style="display:none">#10Jahre49ers #MofaClub49ers #49ersFestival #49ersOppenrod #SupportHighPerformanceLowSpeed #MofaFestival2027 #MofaFestival #MofaLife #2Takt #MofaLiebe #MofaTreffen #Mofaleben #Mopedliebe #ZweiTaktPower #Mofakultur #MofaCommunity #Mittelhessen #Buseck #Hessen #OpenAir2027 #Festivallife</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ SECTION 6: ADS-PLANUNG ══════════════════ -->
+<section class="section" id="ads" style="background:#fff">
+  <div class="container">
+    <div class="section-header">
+      <h2>Ads-Planung</h2>
+      <div class="divider"></div>
+    </div>
+    <p style="text-align:center;color:var(--text-light);margin-bottom:32px">Instagram &amp; Facebook Ads f&uuml;r die hei&szlig;e Phase (April&ndash;Juli 2027).</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3><span class="icon" style="background:#f9e8eb;color:var(--accent2)">&#127919;</span> Zielgruppe</h3>
+        <div class="data-row">
+          <span class="data-label">Alter</span>
+          <span class="data-value">18&ndash;45 Jahre</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Geschlecht</span>
+          <span class="data-value">M&auml;nnlich ~70% &bull; Weiblich ~30%</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Interessen</span>
+          <span class="data-value">Mofa, Moped, 2-Takt, Oldtimer, Motorrad, Festival, Camping, Schrauber</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Radius</span>
+          <span class="data-value">50&ndash;100 km um Buseck (Hessen, NRW, RLP)</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Laufzeit</span>
+          <span class="data-value">Mai &ndash; Juli 2027 (3 Monate)</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Plattformen</span>
+          <span class="data-value">Instagram + Facebook (Meta Ads Manager)</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3><span class="icon" style="background:#fef3c7;color:#92400e">&#128190;</span> Ad-Formate</h3>
+        <div style="margin-bottom:12px">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)">
+            <div>
+              <div style="font-weight:700;font-size:14px">Story-Ads</div>
+              <div style="font-size:12px;color:var(--text-light)">Vollbild, 15 Sek., h&ouml;chste CTR</div>
+            </div>
+            <span class="status-badge status-live">Empfohlen #1</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)">
+            <div>
+              <div style="font-weight:700;font-size:14px">Reel-Ads</div>
+              <div style="font-size:12px;color:var(--text-light)">Organisch wirkend, gro&szlig;e Reichweite</div>
+            </div>
+            <span class="status-badge status-live">Empfohlen #2</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)">
+            <div>
+              <div style="font-weight:700;font-size:14px">Carousel Ads</div>
+              <div style="font-size:12px;color:var(--text-light)">Programm + Infos, mehrere Slides</div>
+            </div>
+            <span class="status-badge status-planned">Optional</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0">
+            <div>
+              <div style="font-weight:700;font-size:14px">Feed-Ads</div>
+              <div style="font-size:12px;color:var(--text-light)">Klassisch, f&uuml;r Ticket-Conversions</div>
+            </div>
+            <span class="status-badge status-planned">Optional</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon" style="background:#dcfce7;color:#166534">&#128176;</span> Budget-Planung Ads</h3>
+      <div class="alert-box alert-info" style="margin-bottom:16px">
+        <span class="alert-icon">&#128161;</span>
+        <span><strong>Empfehlung:</strong> 200&ndash;500&euro; f&uuml;r 3 Monate. Starte mit 50&euro; zum Testen, dann hochskalieren was funktioniert.</span>
+      </div>
+      <div class="budget-row">
+        <span class="budget-row-label">Mai 2027 &mdash; Warm-Up (50&euro;/Woche)</span>
+        <input type="number" class="budget-row-input" id="ads-mai" value="200" min="0">
+        <span class="budget-row-pct">EUR</span>
+      </div>
+      <div class="budget-row">
+        <span class="budget-row-label">Juni 2027 &mdash; Push (75&euro;/Woche)</span>
+        <input type="number" class="budget-row-input" id="ads-juni" value="300" min="0">
+        <span class="budget-row-pct">EUR</span>
+      </div>
+      <div class="budget-row">
+        <span class="budget-row-label">Juli 2027 &mdash; Vollgas (100&euro;/Woche)</span>
+        <input type="number" class="budget-row-input" id="ads-juli" value="400" min="0">
+        <span class="budget-row-pct">EUR</span>
+      </div>
+      <div class="budget-row" style="background:var(--bg);border-radius:8px;padding:10px 12px;margin-top:8px">
+        <span class="budget-row-label" style="font-weight:900;color:var(--primary)">Gesamt Ads-Budget</span>
+        <span id="ads-total" style="font-size:20px;font-weight:900;color:var(--accent-bright)">900 EUR</span>
+        <span class="budget-row-pct"></span>
+      </div>
+      <p style="font-size:12px;color:var(--text-light);margin-top:8px">&#128161; Tipp: Erfolgreichste Posts als Ads boosten ist effizienter als komplett neue Ad-Creatives erstellen.</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon" style="background:#f9e8eb;color:var(--accent2)">&#9989;</span> Ads-Checkliste</h3>
+      <ul class="checklist">
+        <li><input type="checkbox" data-id="sm-ads-account"> Meta Business Account einrichten (Facebook + Instagram verkn&uuml;pfen)<input type="text" class="item-comment" data-comment-id="note-sm-ads-account" placeholder="Kommentar..."></li>
+        <li><input type="checkbox" data-id="sm-ads-pixel"> Meta Pixel auf der Festival-Website einbauen<input type="text" class="item-comment" data-comment-id="note-sm-ads-pixel" placeholder="Kommentar..."></li>
+        <li><input type="checkbox" data-id="sm-ads-creatives"> Ad-Creatives vorbereiten: 3-4 Varianten (Fotos + Reel-Clips)<input type="text" class="item-comment" data-comment-id="note-sm-ads-creatives" placeholder="Kommentar..."></li>
+        <li><input type="checkbox" data-id="sm-ads-targeting"> Zielgruppe speichern im Ads Manager<input type="text" class="item-comment" data-comment-id="note-sm-ads-targeting" placeholder="Kommentar..."></li>
+        <li><input type="checkbox" data-id="sm-ads-test"> A/B Test: 2 Varianten gegeneinander testen<input type="text" class="item-comment" data-comment-id="note-sm-ads-test" placeholder="Kommentar..."></li>
+        <li><input type="checkbox" data-id="sm-ads-tracking"> Ticket-Verkauf tracken (UTM-Links in den Ads)<input type="text" class="item-comment" data-comment-id="note-sm-ads-tracking" placeholder="Kommentar..."></li>
+        <li><input type="checkbox" data-id="sm-ads-lookalike"> Lookalike Audience aus bestehenden Followern erstellen<input type="text" class="item-comment" data-comment-id="note-sm-ads-lookalike" placeholder="Kommentar..."></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Floating Action Panel -->
+<div class="fab-panel" id="fabPanel">
+  <div class="fab-progress" id="fabProgressDisplay">
+    <div id="fabProgressText">0 / 0 erledigt</div>
+    <div class="fab-progress-bar-wrap">
+      <div class="fab-progress-bar-fill" id="fabProgressFill" style="width:0%"></div>
+    </div>
+  </div>
+  <div class="fab-buttons">
+    <button class="fab-btn fab-btn-save" onclick="exportJSON()" title="Status als JSON exportieren">
+      &#128190; Speichern
+    </button>
+    <button class="fab-btn fab-btn-load" onclick="document.getElementById('fabImportInput').click()" title="Status aus JSON importieren">
+      &#128194; Laden
+    </button>
+    <input type="file" id="fabImportInput" accept=".json" onchange="importJSON(event)">
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>10 Jahre Mofa Club 49ers &mdash; Festival 07.-09. August 2027</p>
+  <p>Motorsportarena Stefan Bellof, Stefan-Bellof-Str. 1, 35418 Buseck-Oppenrod</p>
+  <p style="margin-top:8px;font-size:11px;opacity:0.5">Stand: 22.03.2026</p>
+</footer>
+
+<script src="festival.js"></script>
+<script>
+  // Copy individual hashtag on click
+  function copyText(el) {
+    navigator.clipboard.writeText(el.textContent).then(() => {
+      const orig = el.textContent;
+      el.textContent = '&#10003; Kopiert!';
+      el.style.background = 'rgba(46,204,113,0.4)';
+      setTimeout(() => {
+        el.textContent = orig;
+        el.style.background = '';
+      }, 1500);
+    });
+  }
+
+  // Copy hashtag sets
+  function copyHashtags(btn, setId) {
+    const el = document.getElementById(setId + '-hashtags');
+    const text = el ? el.textContent.trim() : '';
+    navigator.clipboard.writeText(text).then(() => {
+      const orig = btn.innerHTML;
+      btn.innerHTML = '&#10003; Kopiert!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerHTML = orig;
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+
+  // Copy caption text
+  function copyCaption(btn, idx) {
+    const captions = document.querySelectorAll('[style*="border-radius:8px"][style*="line-height:1.7"]');
+    if (captions[idx]) {
+      const text = captions[idx].innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = btn.innerHTML;
+        btn.innerHTML = '&#10003; Kopiert!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerHTML = orig;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  }
+
+  // Ads budget calculator
+  function updateAdsTotal() {
+    const mai = parseFloat(document.getElementById('ads-mai').value) || 0;
+    const juni = parseFloat(document.getElementById('ads-juni').value) || 0;
+    const juli = parseFloat(document.getElementById('ads-juli').value) || 0;
+    document.getElementById('ads-total').textContent = (mai + juni + juli).toLocaleString('de-DE') + ' EUR';
+  }
+  document.getElementById('ads-mai').addEventListener('input', updateAdsTotal);
+  document.getElementById('ads-juni').addEventListener('input', updateAdsTotal);
+  document.getElementById('ads-juli').addEventListener('input', updateAdsTotal);
+
+  // Wochenplan + Ads Persistenz
+  function saveSmData() {
+    const data = {};
+    document.querySelectorAll('.sm-persist').forEach(el => {
+      if (el.value.trim()) data[el.dataset.smId] = el.value;
+    });
+    // Ads-Budgets
+    ['ads-mai','ads-juni','ads-juli'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el && el.value) data[id] = el.value;
+    });
+    localStorage.setItem('festival49ers_socialmedia', JSON.stringify(data));
+  }
+
+  function loadSmData() {
+    try {
+      const saved = localStorage.getItem('festival49ers_socialmedia');
+      if (saved) {
+        const data = JSON.parse(saved);
+        Object.entries(data).forEach(([key, val]) => {
+          const el = document.querySelector(`[data-sm-id="${key}"]`) || document.getElementById(key);
+          if (el) el.value = val;
+        });
+      }
+    } catch(e) {}
+  }
+
+  let smTimer;
+  document.querySelectorAll('.sm-persist').forEach(el => {
+    el.addEventListener('input', () => {
+      clearTimeout(smTimer);
+      smTimer = setTimeout(saveSmData, 500);
+    });
+  });
+  ['ads-mai','ads-juni','ads-juli'].forEach(id => {
+    document.getElementById(id)?.addEventListener('input', () => {
+      clearTimeout(smTimer);
+      smTimer = setTimeout(saveSmData, 500);
+    });
+  });
+
+  loadSmData();
+  updateAdsTotal();
+</script>
+</body>
+</html>

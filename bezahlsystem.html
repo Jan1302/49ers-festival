@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bezahlsystem - 49ers Festival 2027</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand"><img src="Logos/49ers_logo.jpg" alt="49ers" style="height:36px;border-radius:50%;margin-right:8px;vertical-align:middle"><span>Festival 2027</span></div>
+    <button class="burger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Uebersicht</a></li>
+      <li><a href="programm.html">Programm</a></li>
+      <li><a href="timeline.html">Timeline</a></li>
+      <li><a href="budget.html">Budget</a></li>
+      <li><a href="checkliste.html">Checkliste</a></li>
+      <li><a href="bezahlsystem.html">Bezahlsystem</a></li>
+      <li><a href="dienstleister.html">Dienstleister</a></li>
+      <li><a href="genehmigungen.html">Recht</a></li>
+      <li><a href="anfragen.html">Anfragen</a></li>
+      <li><a href="socialmedia.html">Social Media</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero" style="padding:30px 20px 24px">
+  <h1 style="font-size:clamp(22px,4vw,36px)">Bezahlsystem</h1>
+</div>
+
+<!-- ══════════════════ BEZAHLSYSTEM ══════════════════ -->
+<section class="section" id="bezahlsystem">
+  <div class="container">
+    <div class="section-header">
+      <h2>Bargeldloses Bezahlsystem</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="alert-box alert-info" style="margin-bottom:24px">
+      <span class="alert-icon">&#128179;</span>
+      <span><strong>Feststeht:</strong> Das Festival wird komplett bargeldlos. 5&euro; Pfand auf Karten/B&auml;nder.</span>
+    </div>
+
+    <!-- System-Vergleich -->
+    <div class="card" style="margin-bottom:24px">
+      <h3>Systemvergleich</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>System</th><th>Vorteile</th><th>Nachteile</th><th>Kosten</th></tr>
+          <tr>
+            <td><strong>RFID/NFC Armband</strong><br><small>(Closed-Loop, Miete)</small></td>
+            <td>Extrem schnell (&lt;1s), +10-30% Umsatz, Echtzeit-Tracking, Festival-Feeling, kein Bargeld-Diebstahl</td>
+            <td>Aufladestationen n&ouml;tig, Restguthaben-Problem, WLAN n&ouml;tig, externe Abh&auml;ngigkeit</td>
+            <td>1-3&euro;/Band + Ger&auml;te-Miete</td>
+          </tr>
+          <tr class="highlight">
+            <td><strong>RFID-Karte</strong><br><small>(Eigenentwicklung)</small></td>
+            <td>Volle Kontrolle, keine laufenden Kosten, wiederverwendbar, Know-how im Verein</td>
+            <td>Hoher Entwicklungsaufwand, Ausfallrisiko, kein Prof. Support, Lasttest n&ouml;tig</td>
+            <td>NFC-Leser ~30-80&euro;/St., Karten ~0,50-1&euro;/St.</td>
+          </tr>
+          <tr>
+            <td><strong>Wertmarken</strong><br><small>(physisch)</small></td>
+            <td>Null Technik, bew&auml;hrt, g&uuml;nstig, kein Ausfallrisiko</td>
+            <td>Kein Tracking, F&auml;lschungsgefahr, langsamer</td>
+            <td>50-200&euro;</td>
+          </tr>
+          <tr>
+            <td><strong>EC-Terminal</strong><br><small>(SumUp etc.)</small></td>
+            <td>Kein Aufladen n&ouml;tig, Plug &amp; Play, Prof. Support</td>
+            <td>0,9-1,9% Geb&uuml;hr, Internet n&ouml;tig, langsamer</td>
+            <td>Terminals 30-80&euro; + Provision</td>
+          </tr>
+          <tr>
+            <td><strong>Smartphone-App / QR</strong></td>
+            <td>Kein physisches Medium, modern, Tracking</td>
+            <td>App-Installation = H&uuml;rde, Akku, Internet</td>
+            <td>Anbieterabh&auml;ngig</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Bewertungsmatrix -->
+    <div class="card" style="margin-bottom:24px">
+      <h3>Bewertung f&uuml;r 500 Besucher</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Kriterium</th><th>Wertmarken</th><th>RFID Eigen</th><th>RFID Miete</th><th>EC-Terminal</th></tr>
+          <tr><td>Kosten</td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;</span></td></tr>
+          <tr><td>Aufwand</td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td></tr>
+          <tr><td>Zuverl&auml;ssigkeit</td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;</span></td></tr>
+          <tr><td>Umsatz-Tracking</td><td><span class="stars">&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;</span></td></tr>
+          <tr><td>Festival-Feeling</td><td><span class="stars">&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;</span></td></tr>
+          <tr><td>Geschwindigkeit</td><td><span class="stars">&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;</span></td></tr>
+          <tr><td>Risiko</td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;</span></td><td><span class="stars">&#9733;&#9733;&#9733;&#9733;</span></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Eigenentwicklung Status -->
+    <div class="card" style="margin-bottom:24px">
+      <h3><span class="icon" style="background:#dcfce7;color:#166534">&#128187;</span> 49ers Eigenentwicklung &mdash; CashlessOS</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Komponente</th><th>Status</th><th>Details</th></tr>
+          <tr class="highlight"><td><strong>POS (Point of Sale)</strong></td><td><span class="status-badge status-live">L&Auml;UFT!</span></td><td>iOS App auf iPhone</td></tr>
+          <tr><td><strong>Admin Frontend</strong></td><td><span class="status-badge status-live">Vorhanden</span></td><td>Web-basiertes Admin-Panel</td></tr>
+          <tr><td><strong>Backend lokal</strong></td><td><span class="status-badge status-planned">In Planung</span></td><td>MiniPC auf dem Gel&auml;nde</td></tr>
+          <tr><td><strong>Backend Cloud</strong></td><td><span class="status-badge status-planned">In Planung</span></td><td>Online-Backup</td></tr>
+          <tr><td><strong>Netzwerk</strong></td><td><span class="status-badge status-planned">In Planung</span></td><td>Eigenes WLAN</td></tr>
+          <tr><td><strong>Karte/Band</strong></td><td><span class="status-badge status-pending">Chip w&auml;hlen</span></td><td>NFC-Karte = Schl&uuml;ssel, Guthaben im Backend</td></tr>
+          <tr><td><strong>Kontostand</strong></td><td><span class="status-badge status-live">Vorhanden</span></td><td>QR-Code &rarr; Kontostand + Historie</td></tr>
+          <tr><td><strong>Sicherheit</strong></td><td><span class="status-badge status-live">Vorhanden</span></td><td>Transaktions-ID Tracking (Anti-Klon)</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- NFC Chips -->
+    <div class="card" style="margin-bottom:24px">
+      <h3>NFC-Chip Vergleich</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Chip</th><th>Speicher</th><th>Sicherheit</th><th>Preis/St.</th><th>Empfehlung</th></tr>
+          <tr class="highlight"><td><strong>NTAG213</strong></td><td>144 Bytes</td><td>Passwort 32-bit</td><td>0,10-0,30&euro;</td><td><strong>1. Wahl!</strong> G&uuml;nstig, reicht als Schl&uuml;ssel</td></tr>
+          <tr><td>NTAG215</td><td>504 Bytes</td><td>Passwort 32-bit</td><td>0,15-0,40&euro;</td><td>Mehr Speicher, unn&ouml;tig</td></tr>
+          <tr><td>NTAG216</td><td>888 Bytes</td><td>Passwort 32-bit</td><td>0,25-0,60&euro;</td><td>Overkill</td></tr>
+          <tr class="highlight-warn"><td><strong>NTAG424 DNA</strong></td><td>256 Bytes</td><td><strong>AES-128!</strong></td><td>0,50-1,50&euro;</td><td><strong>Sicherster!</strong> Nicht klonbar</td></tr>
+          <tr><td>MIFARE UL EV1</td><td>48 Bytes</td><td>Passwort 32-bit</td><td>0,08-0,20&euro;</td><td>Billigster, Festival-Standard</td></tr>
+          <tr><td>MIFARE UL EV2</td><td>48-128 Bytes</td><td>Originality Check</td><td>0,10-0,25&euro;</td><td>+ Echtheitspruefung</td></tr>
+        </table>
+      </div>
+      <div class="alert-box alert-warning" style="margin-top:12px">
+        <span class="alert-icon">&#9888;</span>
+        <span>NICHT iPhone-kompatibel: MIFARE Classic 1K/4K, EM4100/4200, HID iCLASS</span>
+      </div>
+      <div class="alert-box alert-success" style="margin-top:8px">
+        <span class="alert-icon">&#10003;</span>
+        <span>Bei eurem System (Karte = Schl&uuml;ssel + Transaktions-ID): <strong>NTAG213 reicht!</strong> Bei 500 Karten ca. 50-150&euro;.</span>
+      </div>
+    </div>
+
+    <!-- Armband-Anbieter -->
+    <div class="card" style="margin-bottom:24px">
+      <h3>PVC Slider + Stoffband &mdash; Anbieter</h3>
+      <p style="color:var(--text-light);margin-bottom:16px;font-size:14px">PVC-Karte (40x25mm) mit NFC-Chip und 2 Schlitzen &mdash; Stoffband wird durchgef&auml;delt. Slider wiederverwendbar, Band ist Souvenir.</p>
+      <div class="grid-3">
+        <div class="provider-card recommended">
+          <div class="provider-name">Ikast Etikett</div>
+          <div class="provider-location">Deutschland</div>
+          <div class="provider-details">Diverse Chips &mdash; ab <strong>0,45&euro;/St.</strong> &mdash; Custom Print</div>
+          <div class="provider-contact">0511/44394126</div>
+        </div>
+        <div class="provider-card recommended">
+          <div class="provider-name">Wristband Factory EU</div>
+          <div class="provider-location">EU</div>
+          <div class="provider-details">NTAG213, Mifare 1K &mdash; ab 0,89&euro;/St. &mdash; CMYK Print</div>
+          <div class="provider-contact">wristbandfactory.eu</div>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Label Yourself</div>
+          <div class="provider-location">EU</div>
+          <div class="provider-details">NTAG213, Mifare UL &mdash; ~1,35&euro;/St. &mdash; Slider+Band Print</div>
+          <div class="provider-contact">labelyourself.com</div>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Tagstand</div>
+          <div class="provider-location">USA</div>
+          <div class="provider-details">NTAG213 &mdash; Slider 0,65&euro;/St. &mdash; Komplett ~1,40&euro;/St.</div>
+          <div class="provider-contact">sales@tagstand.com</div>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Orakel</div>
+          <div class="provider-location">EU</div>
+          <div class="provider-details">Mifare UL EV1, NTAG213 &mdash; Auf Anfrage &mdash; Vollfarbdruck</div>
+          <div class="provider-contact">orakel.com</div>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Nordic Wristbands</div>
+          <div class="provider-location">EU (Nord)</div>
+          <div class="provider-details">NTAG213/215/216, UL &mdash; Auf Anfrage &mdash; 8 Farben</div>
+          <div class="provider-contact">nordicwristbands.com</div>
+        </div>
+      </div>
+      <div class="alert-box alert-success" style="margin-top:16px">
+        <span class="alert-icon">&#10003;</span>
+        <span><strong>Empfehlung:</strong> Ikast Etikett + Wristband Factory EU + Orakel anfragen und 3 Angebote vergleichen!</span>
+      </div>
+    </div>
+
+    <!-- Smarte Kombinationen -->
+    <div class="card" style="margin-bottom:24px">
+      <h3>Smarte Kombinationen</h3>
+      <ul style="list-style:none;padding:0">
+        <li style="padding:10px 0;border-bottom:1px solid var(--border)"><strong>RFID (Eigen) + Wertmarken als Backup:</strong> Euer System l&auml;uft, bei Technik-Ausfall gibt's Marken</li>
+        <li style="padding:10px 0;border-bottom:1px solid var(--border)"><strong>RFID (Miete) + EC-Terminal zum Aufladen:</strong> Professionelles System, bargeldloses Aufladen</li>
+        <li style="padding:10px 0"><strong>Wertmarken + EC-Terminal am Marken-Verkauf:</strong> Klassisch, aber Marken werden bargeldlos gekauft</li>
+      </ul>
+    </div>
+
+    <!-- Noch zu kl&auml;ren -->
+    <div class="card">
+      <h3>Noch zu kl&auml;ren</h3>
+      <ul class="checklist">
+        <li><input type="checkbox" data-id="rfid-aufladen"> Wie laden Besucher Guthaben auf? (Separate Station? EC-Terminal? Nur Bar?)</li>
+        <li><input type="checkbox" data-id="rfid-offline"> Offline-F&auml;higkeit bei WLAN-Ausfall?</li>
+        <li><input type="checkbox" data-id="rfid-pos-anzahl"> Wie viele POS-Ger&auml;te (iPhones) werden gebraucht?</li>
+        <li><input type="checkbox" data-id="rfid-minipc"> MiniPC Hardware-Wahl? (Raspberry Pi? Intel NUC?)</li>
+        <li><input type="checkbox" data-id="rfid-chip-typ"> NFC-Chip-Typ final entscheiden</li>
+        <li><input type="checkbox" data-id="rfid-rueckerstattung"> R&uuml;ckerstattung Restguthaben: Wie?</li>
+        <li><input type="checkbox" data-id="rfid-lasttest"> Lasttest mit 500 gleichzeitigen Nutzern</li>
+        <li><input type="checkbox" data-id="rfid-fallback"> Fallback-Plan: Wertmarken als Backup?</li>
+      </ul>
+      <div class="notes-area" style="margin-top:16px">Notizen Bezahlsystem...</div>
+    </div>
+  </div>
+</section>
+
+<div class="fab-panel" id="fabPanel">
+  <div class="fab-progress">
+    <span id="progressText">0 / 0 erledigt (0%)</span>
+    <div class="fab-progress-bar"><div class="fab-progress-fill" id="progressFill"></div></div>
+  </div>
+  <div style="display:flex;gap:8px">
+    <button class="fab-btn" onclick="exportJSON()" title="Status als JSON speichern">&#128190; Speichern</button>
+    <button class="fab-btn" onclick="document.getElementById('jsonImport').click()" title="Status aus JSON laden">&#128194; Laden</button>
+    <input type="file" id="jsonImport" accept=".json" style="display:none" onchange="importJSON(event)">
+  </div>
+</div>
+
+<footer class="footer">10 Jahre Mofa Club 49ers &mdash; Festivalplanung 2027</footer>
+
+<script src="festival.js"></script>
+</body>
+</html>

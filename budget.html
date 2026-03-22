@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Budget &amp; Sponsoring - 49ers Festival 2027</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand"><img src="Logos/49ers_logo.jpg" alt="49ers" style="height:36px;border-radius:50%;margin-right:8px;vertical-align:middle"><span>Festival 2027</span></div>
+    <button class="burger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Uebersicht</a></li>
+      <li><a href="programm.html">Programm</a></li>
+      <li><a href="timeline.html">Timeline</a></li>
+      <li><a href="budget.html">Budget</a></li>
+      <li><a href="checkliste.html">Checkliste</a></li>
+      <li><a href="bezahlsystem.html">Bezahlsystem</a></li>
+      <li><a href="dienstleister.html">Dienstleister</a></li>
+      <li><a href="genehmigungen.html">Recht</a></li>
+      <li><a href="anfragen.html">Anfragen</a></li>
+      <li><a href="socialmedia.html">Social Media</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero" style="padding:30px 20px 24px">
+  <h1 style="font-size:clamp(22px,4vw,36px)">Budget &amp; Sponsoring</h1>
+</div>
+
+<!-- ══════════════════ BUDGET ══════════════════ -->
+<section class="section" id="budget">
+  <div class="container">
+    <div class="section-header">
+      <h2>Budgetplanung</h2>
+      <div class="divider"></div>
+    </div>
+
+    <!-- Planvarianten als Referenz (collapsible) -->
+    <div class="card" style="margin-bottom:24px">
+      <h3 style="cursor:pointer" onclick="this.parentElement.querySelector('.plan-details').classList.toggle('collapsed')">
+        <span class="icon" style="background:#f9e8eb;color:var(--accent2)">&#128202;</span>
+        Planvarianten (Referenz)
+        <span style="margin-left:auto;font-size:13px;color:var(--text-light)">Klicken zum Ein-/Ausklappen</span>
+      </h3>
+      <div class="plan-details collapsed">
+        <div class="grid-2" style="margin-top:16px">
+          <div style="padding:16px;background:var(--bg);border-radius:8px">
+            <strong>Variante A: Sparsam</strong><br>
+            <span style="font-size:24px;font-weight:800;color:var(--primary)">~12.000&euro;</span>
+            <p style="font-size:13px;color:var(--text-light);margin-top:4px">Kleinbuehne, lokale Bands, Eigenleistung Grillen</p>
+            <div style="margin-top:12px">
+              <div class="budget-item"><div class="budget-header"><span class="label">B&uuml;hne/Zelt/Toiletten/Strom</span><span class="amount">3.500&euro;</span></div><div class="budget-bar"><div class="budget-bar-fill" style="width:29%"></div></div></div>
+              <div class="budget-item"><div class="budget-header"><span class="label">Bands/DJ</span><span class="amount">1.500&euro;</span></div><div class="budget-bar"><div class="budget-bar-fill" style="width:13%"></div></div></div>
+              <div class="budget-item"><div class="budget-header"><span class="label">Getr&auml;nke-Einkauf</span><span class="amount">2.500&euro;</span></div><div class="budget-bar"><div class="budget-bar-fill" style="width:21%"></div></div></div>
+              <div class="budget-item"><div class="budget-header"><span class="label">Essen-Einkauf</span><span class="amount">500&euro;</span></div><div class="budget-bar"><div class="budget-bar-fill" style="width:4%"></div></div></div>
+              <div class="budget-item"><div class="budget-header"><span class="label">Marketing</span><span class="amount">500&euro;</span></div><div class="budget-bar"><div class="budget-bar-fill" style="width:4%"></div></div></div>
+              <div class="budget-item"><div class="budget-header"><span class="label">GEMA/Versicherung/Genehmigungen</span><span class="amount">800&euro;</span></div><div class="budget-bar"><div class="budget-bar-fill" style="width:7%"></div></div></div>
+              <div class="budget-item"><div class="budget-header"><span class="label">Sanit&auml;tsdienst</span><span class="amount">800&euro;</span></div><div class="budget-bar"><div class="budget-bar-fill" style="width:7%"></div></div></div>
+              <div class="budget-item"><div class="budget-header"><span class="label">H&uuml;pfburg/Schie&szlig;bude</span><span class="amount">600&euro;</span></div><div class="budget-bar"><div class="budget-bar-fill" style="width:5%"></div></div></div>
+              <div class="budget-item"><div class="budget-header"><span class="label">Merchandise</span><span class="amount">800&euro;</span></div><div class="budget-bar"><div class="budget-bar-fill" style="width:7%"></div></div></div>
+              <div class="budget-item"><div class="budget-header"><span class="label">Reserve</span><span class="amount">500&euro;</span></div><div class="budget-bar"><div class="budget-bar-fill" style="width:4%"></div></div></div>
+              <div style="margin-top:12px;padding-top:12px;border-top:2px solid var(--primary);display:flex;justify-content:space-between;font-weight:800;font-size:16px"><span>Gesamt</span><span>~12.000&euro;</span></div>
+            </div>
+          </div>
+          <div style="padding:16px;background:var(--bg);border-radius:8px">
+            <strong>Variante B: Komfortabel</strong><br>
+            <span style="font-size:24px;font-weight:800;color:var(--primary)">~20.000&euro;</span>
+            <p style="font-size:13px;color:var(--text-light);margin-top:4px">Profi-PA, regionaler Headliner, Social Media Ads</p>
+            <div style="margin-top:12px">
+              <div class="budget-item"><div class="budget-header"><span class="label">B&uuml;hne/Zelt/Toiletten/Strom/Licht</span><span class="amount">6.000&euro;</span></div><div class="budget-bar"><div class="budget-bar-fill" style="width:29%"></div></div></div>
+              <div class="budget-item"><div class="budget-header"><span class="label">Bands/DJ (3-4 Bands + 2 DJs)</span><span class="amount">4.000&euro;</span></div><div class="budget-bar"><div class="budget-bar-fill" style="width:19%"></div></div></div>
+              <div class="budget-item"><div class="budget-header"><span class="label">Getr&auml;nke-Einkauf</span><span class="amount">3.000&euro;</span></div><div class="budget-bar"><div class="budget-bar-fill" style="width:14%"></div></div></div>
+              <div class="budget-item"><div class="budget-header"><span class="label">Essen / Foodtruck-Provision</span><span class="amount">1.000&euro;</span></div><div class="budget-bar"><div class="budget-bar-fill" style="width:5%"></div></div></div>
+              <div class="budget-item"><div class="budget-header"><span class="label">Marketing inkl. Social Media Ads</span><span class="amount">1.500&euro;</span></div><div class="budget-bar"><div class="budget-bar-fill" style="width:7%"></div></div></div>
+              <div class="budget-item"><div class="budget-header"><span class="label">GEMA/Versicherung/Genehmigungen</span><span class="amount">1.000&euro;</span></div><div class="budget-bar"><div class="budget-bar-fill" style="width:5%"></div></div></div>
+              <div class="budget-item"><div class="budget-header"><span class="label">Sanit&auml;tsdienst + Security</span><span class="amount">1.500&euro;</span></div><div class="budget-bar"><div class="budget-bar-fill" style="width:7%"></div></div></div>
+              <div class="budget-item"><div class="budget-header"><span class="label">Kinderprogramm &amp; Attraktionen</span><span class="amount">1.000&euro;</span></div><div class="budget-bar"><div class="budget-bar-fill" style="width:5%"></div></div></div>
+              <div class="budget-item"><div class="budget-header"><span class="label">Merchandise &amp; Deko</span><span class="amount">1.000&euro;</span></div><div class="budget-bar"><div class="budget-bar-fill" style="width:5%"></div></div></div>
+              <div class="budget-item"><div class="budget-header"><span class="label">Reserve</span><span class="amount">1.000&euro;</span></div><div class="budget-bar"><div class="budget-bar-fill" style="width:5%"></div></div></div>
+              <div style="margin-top:12px;padding-top:12px;border-top:2px solid var(--primary);display:flex;justify-content:space-between;font-weight:800;font-size:16px"><span>Gesamt</span><span>~21.000&euro;</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard Cards -->
+    <div class="grid-3" style="margin-bottom:24px">
+      <div class="card" style="text-align:center">
+        <div style="font-size:13px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;font-family:'Oswald',sans-serif">Ausgaben gesamt</div>
+        <div id="total-ausgaben" style="font-size:32px;font-weight:800;color:var(--danger);font-family:'Oswald',sans-serif">0 &euro;</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:13px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;font-family:'Oswald',sans-serif">Einnahmen gesamt</div>
+        <div id="total-einnahmen" style="font-size:32px;font-weight:800;color:var(--success);font-family:'Oswald',sans-serif">0 &euro;</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:13px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;font-family:'Oswald',sans-serif">Ergebnis</div>
+        <div id="total-ergebnis" style="font-size:32px;font-weight:800;font-family:'Oswald',sans-serif">0 &euro;</div>
+      </div>
+    </div>
+
+    <!-- AUSGABEN -->
+    <div class="card" style="margin-bottom:24px">
+      <h3><span class="icon" style="background:#fef2f2;color:#991b1b">&#128181;</span> Ausgaben</h3>
+      <div class="table-wrap">
+        <table id="table-ausgaben">
+          <tr>
+            <th>Position</th>
+            <th style="width:120px">Geplant</th>
+            <th style="width:130px">Tats&auml;chlich (&euro;)</th>
+            <th style="min-width:180px">Anbieter / Notiz</th>
+          </tr>
+          <tr>
+            <td>Festzelt (inkl. Aufbau/Abbau)</td>
+            <td style="color:var(--text-light)">2.000-4.000</td>
+            <td><input type="number" class="budget-input ausgabe" data-budget-id="aus-zelt" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-aus-zelt" placeholder="z.B. Zeltverleih Heil..."></td>
+          </tr>
+          <tr>
+            <td>B&uuml;hne / PA / Licht</td>
+            <td style="color:var(--text-light)">1.500-2.000</td>
+            <td><input type="number" class="budget-input ausgabe" data-budget-id="aus-technik" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-aus-technik" placeholder="Anbieter..."></td>
+          </tr>
+          <tr>
+            <td>Toiletten (Dixi)</td>
+            <td style="color:var(--text-light)">800-1.200</td>
+            <td><input type="number" class="budget-input ausgabe" data-budget-id="aus-toiletten" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-aus-toiletten" placeholder="Anbieter..."></td>
+          </tr>
+          <tr>
+            <td>Strom / Technik</td>
+            <td style="color:var(--text-light)">200-800</td>
+            <td><input type="number" class="budget-input ausgabe" data-budget-id="aus-strom" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-aus-strom" placeholder="Anbieter..."></td>
+          </tr>
+          <tr>
+            <td>Bands / DJ</td>
+            <td style="color:var(--text-light)">1.500-4.000</td>
+            <td><input type="number" class="budget-input ausgabe" data-budget-id="aus-bands" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-aus-bands" placeholder="Welche Bands..."></td>
+          </tr>
+          <tr>
+            <td>Getr&auml;nke-Einkauf</td>
+            <td style="color:var(--text-light)">2.500-3.000</td>
+            <td><input type="number" class="budget-input ausgabe" data-budget-id="aus-getraenke" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-aus-getraenke" placeholder="Lieferant..."></td>
+          </tr>
+          <tr>
+            <td>Essen / Foodtrucks</td>
+            <td style="color:var(--text-light)">500-1.000</td>
+            <td><input type="number" class="budget-input ausgabe" data-budget-id="aus-essen" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-aus-essen" placeholder="Foodtrucks..."></td>
+          </tr>
+          <tr>
+            <td>Marketing (Flyer, Plakate, Ads)</td>
+            <td style="color:var(--text-light)">500-1.500</td>
+            <td><input type="number" class="budget-input ausgabe" data-budget-id="aus-marketing" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-aus-marketing" placeholder="Druckerei..."></td>
+          </tr>
+          <tr>
+            <td>GEMA</td>
+            <td style="color:var(--text-light)">200-400</td>
+            <td><input type="number" class="budget-input ausgabe" data-budget-id="aus-gema" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-aus-gema" placeholder=""></td>
+          </tr>
+          <tr>
+            <td>Versicherung</td>
+            <td style="color:var(--text-light)">200-500</td>
+            <td><input type="number" class="budget-input ausgabe" data-budget-id="aus-versicherung" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-aus-versicherung" placeholder="Anbieter..."></td>
+          </tr>
+          <tr>
+            <td>Genehmigungen</td>
+            <td style="color:var(--text-light)">200-300</td>
+            <td><input type="number" class="budget-input ausgabe" data-budget-id="aus-genehmigungen" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-aus-genehmigungen" placeholder=""></td>
+          </tr>
+          <tr>
+            <td>Sanit&auml;tsdienst</td>
+            <td style="color:var(--text-light)">500-1.500</td>
+            <td><input type="number" class="budget-input ausgabe" data-budget-id="aus-sanitaet" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-aus-sanitaet" placeholder="DRK / Malteser..."></td>
+          </tr>
+          <tr>
+            <td>Security</td>
+            <td style="color:var(--text-light)">0-500</td>
+            <td><input type="number" class="budget-input ausgabe" data-budget-id="aus-security" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-aus-security" placeholder="Firma..."></td>
+          </tr>
+          <tr>
+            <td>H&uuml;pfburg</td>
+            <td style="color:var(--text-light)">200-500</td>
+            <td><input type="number" class="budget-input ausgabe" data-budget-id="aus-huepfburg" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-aus-huepfburg" placeholder="Anbieter..."></td>
+          </tr>
+          <tr>
+            <td>Schie&szlig;bude</td>
+            <td style="color:var(--text-light)">200-500</td>
+            <td><input type="number" class="budget-input ausgabe" data-budget-id="aus-schiessbude" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-aus-schiessbude" placeholder="Anbieter..."></td>
+          </tr>
+          <tr>
+            <td>Merchandise (Shirts, Aufn&auml;her)</td>
+            <td style="color:var(--text-light)">800-1.000</td>
+            <td><input type="number" class="budget-input ausgabe" data-budget-id="aus-merch" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-aus-merch" placeholder="Druckerei..."></td>
+          </tr>
+          <tr>
+            <td>Dekoration</td>
+            <td style="color:var(--text-light)">200-500</td>
+            <td><input type="number" class="budget-input ausgabe" data-budget-id="aus-deko" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-aus-deko" placeholder=""></td>
+          </tr>
+          <tr>
+            <td>Reserve / Unvorhergesehenes</td>
+            <td style="color:var(--text-light)">500-1.000</td>
+            <td><input type="number" class="budget-input ausgabe" data-budget-id="aus-reserve" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-aus-reserve" placeholder=""></td>
+          </tr>
+          <tr class="total">
+            <td>Gesamt Ausgaben</td>
+            <td>12.000-21.000</td>
+            <td id="sum-ausgaben" style="font-size:16px">0 &euro;</td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+      <div style="margin-top:12px">
+        <button class="fab-btn" onclick="addBudgetRow('table-ausgaben', 'ausgabe')" style="font-size:13px">+ Position hinzuf&uuml;gen</button>
+      </div>
+    </div>
+
+    <!-- EINNAHMEN -->
+    <div class="card" style="margin-bottom:24px">
+      <h3><span class="icon" style="background:#dcfce7;color:#166534">&#128176;</span> Einnahmen</h3>
+      <div class="table-wrap">
+        <table id="table-einnahmen">
+          <tr>
+            <th>Quelle</th>
+            <th style="width:120px">Gesch&auml;tzt</th>
+            <th style="width:130px">Erwartet (&euro;)</th>
+            <th style="min-width:180px">Notiz</th>
+          </tr>
+          <tr>
+            <td>Eintritt (Tickets)</td>
+            <td style="color:var(--text-light)">3.000-10.000</td>
+            <td><input type="number" class="budget-input einnahme" data-budget-id="ein-eintritt" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-ein-eintritt" placeholder="Ticketpreis x Anzahl..."></td>
+          </tr>
+          <tr>
+            <td>Getr&auml;nkeverkauf</td>
+            <td style="color:var(--text-light)">4.000-12.000</td>
+            <td><input type="number" class="budget-input einnahme" data-budget-id="ein-getraenke" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-ein-getraenke" placeholder="Kalkulation..."></td>
+          </tr>
+          <tr>
+            <td>Essensverkauf / Provision</td>
+            <td style="color:var(--text-light)">1.000-3.000</td>
+            <td><input type="number" class="budget-input einnahme" data-budget-id="ein-essen" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-ein-essen" placeholder=""></td>
+          </tr>
+          <tr>
+            <td>Merchandise-Verkauf</td>
+            <td style="color:var(--text-light)">500-2.000</td>
+            <td><input type="number" class="budget-input einnahme" data-budget-id="ein-merch" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-ein-merch" placeholder=""></td>
+          </tr>
+          <tr>
+            <td>Sponsoring</td>
+            <td style="color:var(--text-light)">500-3.000</td>
+            <td><input type="number" class="budget-input einnahme" data-budget-id="ein-sponsoring" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-ein-sponsoring" placeholder="Welche Sponsoren..."></td>
+          </tr>
+          <tr>
+            <td>Camping-Geb&uuml;hren</td>
+            <td style="color:var(--text-light)">500-1.500</td>
+            <td><input type="number" class="budget-input einnahme" data-budget-id="ein-camping" placeholder="0" min="0"></td>
+            <td><input type="text" class="budget-note" data-budget-id="note-ein-camping" placeholder="10&euro; x Stellpl&auml;tze..."></td>
+          </tr>
+          <tr class="total">
+            <td>Gesamt Einnahmen</td>
+            <td>9.500-31.500</td>
+            <td id="sum-einnahmen" style="font-size:16px">0 &euro;</td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+      <div style="margin-top:12px">
+        <button class="fab-btn" onclick="addBudgetRow('table-einnahmen', 'einnahme')" style="font-size:13px">+ Quelle hinzuf&uuml;gen</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════ GETRAENKE-SIMULATION ══════════════════ -->
+<section class="section" id="simulation">
+  <div class="container">
+    <div class="section-header">
+      <h2>Getr&auml;nke-Simulation</h2>
+      <div class="divider"></div>
+    </div>
+    <p style="text-align:center;color:var(--text-light);margin-bottom:24px">Simuliere den Getr&auml;nkeverkauf pro Tag. &Auml;ndere Preise, Mengen und Besucherzahlen um verschiedene Szenarien durchzuspielen.</p>
+
+    <!-- Besucher pro Tag -->
+    <div class="card" style="margin-bottom:24px">
+      <h3><span class="icon" style="background:#f9e8eb;color:var(--accent2)">&#128101;</span> Besucher pro Tag</h3>
+      <div class="grid-3">
+        <div>
+          <label class="field-label">Freitag (Warm-Up)</label>
+          <input type="number" class="field-input sim-input" id="sim-besucher-fr" value="150" min="0">
+        </div>
+        <div>
+          <label class="field-label">Samstag (Haupttag)</label>
+          <input type="number" class="field-input sim-input" id="sim-besucher-sa" value="400" min="0">
+        </div>
+        <div>
+          <label class="field-label">Sonntag (Ausklang)</label>
+          <input type="number" class="field-input sim-input" id="sim-besucher-so" value="100" min="0">
+        </div>
+      </div>
+    </div>
+
+    <!-- Getraenke-Sortiment -->
+    <div class="card" style="margin-bottom:24px">
+      <h3><span class="icon" style="background:#fef3c7;color:#92400e">&#127866;</span> Getr&auml;nke-Sortiment</h3>
+      <p style="font-size:13px;color:var(--text-light);margin-bottom:16px">Erstelle eure Getr&auml;nke mit Menge, Einkaufspreis (EK), Verkaufspreis (VK) und gesch&auml;tztem Absatz pro Besucher pro Tag.</p>
+      <div id="sim-products"></div>
+      <div style="margin-top:16px">
+        <button class="fab-btn" onclick="addProduct()" style="font-size:13px">+ Getr&auml;nk hinzuf&uuml;gen</button>
+      </div>
+    </div>
+
+    <!-- Ergebnis pro Tag -->
+    <div class="card" style="margin-bottom:24px">
+      <h3><span class="icon" style="background:#dcfce7;color:#166534">&#128200;</span> Ergebnis pro Tag</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th></th><th>Freitag</th><th>Samstag</th><th>Sonntag</th><th>Gesamt</th></tr>
+          <tr><td><strong>Verkaufte St&uuml;ck</strong></td><td id="sim-stueck-fr">-</td><td id="sim-stueck-sa">-</td><td id="sim-stueck-so">-</td><td id="sim-stueck-total" style="font-weight:800">-</td></tr>
+          <tr><td><strong>Umsatz</strong></td><td id="sim-umsatz-fr">-</td><td id="sim-umsatz-sa">-</td><td id="sim-umsatz-so">-</td><td id="sim-umsatz-total" style="font-weight:800;color:var(--success)">-</td></tr>
+          <tr><td><strong>Einkaufskosten</strong></td><td id="sim-ek-fr">-</td><td id="sim-ek-sa">-</td><td id="sim-ek-so">-</td><td id="sim-ek-total" style="font-weight:800;color:var(--danger)">-</td></tr>
+          <tr style="background:var(--bg)"><td><strong>Gewinn</strong></td><td id="sim-gewinn-fr" style="font-weight:800">-</td><td id="sim-gewinn-sa" style="font-weight:800">-</td><td id="sim-gewinn-so" style="font-weight:800">-</td><td id="sim-gewinn-total" style="font-size:18px;font-weight:800">-</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Einkaufsliste -->
+    <div class="card">
+      <h3><span class="icon" style="background:#f9e8eb;color:var(--accent2)">&#128230;</span> Einkaufsliste (Bedarf gesamt)</h3>
+      <p style="font-size:13px;color:var(--text-light);margin-bottom:12px">Hochrechnung wie viel ihr einkaufen m&uuml;sst. +15% Puffer eingerechnet.</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Getr&auml;nk</th><th>Menge</th><th>Bedarf</th><th>+ 15% Puffer</th><th>Liter gesamt</th><th>EK gesamt</th></tr>
+          <tbody id="sim-einkauf-body"></tbody>
+          <tr class="total"><td>Gesamt</td><td></td><td id="sim-bedarf-total">-</td><td id="sim-puffer-total">-</td><td id="sim-liter-total">-</td><td id="sim-ekges-total">-</td></tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════ SPONSORING ══════════════════ -->
+<section class="section" id="sponsoring">
+  <div class="container">
+    <div class="section-header">
+      <h2>Sponsoring-Ideen</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Lokale Sponsoren</h3>
+        <ul style="padding-left:20px;font-size:14px">
+          <li style="padding:4px 0"><strong>Brauerei/Getr&auml;nkeh&auml;ndler:</strong> Zapfanlage, Gl&auml;ser gegen Exklusivrecht</li>
+          <li style="padding:4px 0"><strong>Sparkasse/Volksbank:</strong> 500-2.000&euro;</li>
+          <li style="padding:4px 0"><strong>Baumarkt:</strong> Sachspenden</li>
+          <li style="padding:4px 0"><strong>Autohaus/Motorradh&auml;ndler:</strong> Banner + Tombola</li>
+          <li style="padding:4px 0"><strong>Lokale Handwerker</strong></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Szene-Sponsoren</h3>
+        <ul style="padding-left:20px;font-size:14px">
+          <li style="padding:4px 0"><strong>Mofa-Zubeh&ouml;r-Shops</strong></li>
+          <li style="padding:4px 0"><strong>Zweitakt-&Ouml;l-Hersteller</strong></li>
+          <li style="padding:4px 0"><strong>Helm-/Bekleidungsmarken:</strong> Sachpreise</li>
+          <li style="padding:4px 0"><strong>Werkzeughersteller:</strong> Preise Schraubwettbewerb</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Gegenleistungen</h3>
+        <ul style="padding-left:20px;font-size:14px">
+          <li style="padding:4px 0">Logo auf Plakaten, Flyern, Banner, Website</li>
+          <li style="padding:4px 0">Social-Media-Posts mit Sponsoren-Nennung</li>
+          <li style="padding:4px 0">Standfl&auml;che auf dem Festival</li>
+          <li style="padding:4px 0">Nennung in der Moderation</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>F&ouml;rdermittel</h3>
+        <ul style="padding-left:20px;font-size:14px">
+          <li style="padding:4px 0">Vereinsf&ouml;rderung der Gemeinde Buseck</li>
+          <li style="padding:4px 0">Kreisf&ouml;rderung Landkreis Gie&szlig;en</li>
+          <li style="padding:4px 0">Crowdfunding (&uuml;ber Startnext)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="fab-panel" id="fabPanel">
+  <div class="fab-progress">
+    <span id="progressText">0 / 0 erledigt (0%)</span>
+    <div class="fab-progress-bar"><div class="fab-progress-fill" id="progressFill"></div></div>
+  </div>
+  <div style="display:flex;gap:8px">
+    <button class="fab-btn" onclick="exportJSON()" title="Status als JSON speichern">&#128190; Speichern</button>
+    <button class="fab-btn" onclick="document.getElementById('jsonImport').click()" title="Status aus JSON laden">&#128194; Laden</button>
+    <input type="file" id="jsonImport" accept=".json" style="display:none" onchange="importJSON(event)">
+  </div>
+</div>
+
+<footer class="footer">10 Jahre Mofa Club 49ers &mdash; Festivalplanung 2027</footer>
+
+<script src="festival.js"></script>
+<script>
+// Budget calculation and persistence
+function calcBudget() {
+  let ausgaben = 0;
+  document.querySelectorAll('.budget-input.ausgabe').forEach(input => {
+    ausgaben += parseFloat(input.value) || 0;
+  });
+  let einnahmen = 0;
+  document.querySelectorAll('.budget-input.einnahme').forEach(input => {
+    einnahmen += parseFloat(input.value) || 0;
+  });
+  const ergebnis = einnahmen - ausgaben;
+
+  document.getElementById('sum-ausgaben').textContent = ausgaben.toLocaleString('de-DE') + ' \u20AC';
+  document.getElementById('sum-einnahmen').textContent = einnahmen.toLocaleString('de-DE') + ' \u20AC';
+  document.getElementById('total-ausgaben').textContent = ausgaben.toLocaleString('de-DE') + ' \u20AC';
+  document.getElementById('total-einnahmen').textContent = einnahmen.toLocaleString('de-DE') + ' \u20AC';
+
+  const ergebnisEl = document.getElementById('total-ergebnis');
+  ergebnisEl.textContent = (ergebnis >= 0 ? '+' : '') + ergebnis.toLocaleString('de-DE') + ' \u20AC';
+  ergebnisEl.style.color = ergebnis >= 0 ? 'var(--success)' : 'var(--danger)';
+}
+
+function saveBudget() {
+  const data = {};
+  document.querySelectorAll('.budget-input, .budget-note').forEach(el => {
+    if (el.value) data[el.dataset.budgetId] = el.value;
+  });
+  localStorage.setItem('festival49ers_budget', JSON.stringify(data));
+}
+
+function loadBudget() {
+  try {
+    const saved = localStorage.getItem('festival49ers_budget');
+    if (saved) {
+      const data = JSON.parse(saved);
+      Object.entries(data).forEach(([id, val]) => {
+        const el = document.querySelector(`[data-budget-id="${id}"]`);
+        if (el) el.value = val;
+      });
+    }
+  } catch(e) {}
+}
+
+let budgetTimer;
+document.querySelectorAll('.budget-input, .budget-note').forEach(el => {
+  el.addEventListener('input', () => {
+    calcBudget();
+    clearTimeout(budgetTimer);
+    budgetTimer = setTimeout(saveBudget, 500);
+  });
+});
+
+// Add custom row
+let customRowCount = 0;
+function addBudgetRow(tableId, type) {
+  customRowCount++;
+  const table = document.getElementById(tableId);
+  const totalRow = table.querySelector('tr.total');
+  const newRow = document.createElement('tr');
+  newRow.innerHTML = `
+    <td><input type="text" class="budget-note" data-budget-id="custom-name-${type}-${customRowCount}" placeholder="Position eingeben..." style="font-weight:600"></td>
+    <td style="color:var(--text-light)">-</td>
+    <td><input type="number" class="budget-input ${type}" data-budget-id="custom-${type}-${customRowCount}" placeholder="0" min="0"></td>
+    <td><input type="text" class="budget-note" data-budget-id="note-custom-${type}-${customRowCount}" placeholder="Notiz..."></td>
+  `;
+  table.querySelector('tbody, table').insertBefore(newRow, totalRow);
+
+  // Attach listeners to new inputs
+  newRow.querySelectorAll('.budget-input, .budget-note').forEach(el => {
+    el.addEventListener('input', () => {
+      calcBudget();
+      clearTimeout(budgetTimer);
+      budgetTimer = setTimeout(saveBudget, 500);
+    });
+  });
+}
+
+loadBudget();
+calcBudget();
+
+// ═══════════════════════════════════════
+// GETRAENKE-SIMULATION (dynamisch)
+// ═══════════════════════════════════════
+let products = [
+  { id: 'bier',    name: 'Bier (Pils)',     menge: 0.5, einheit: 'l', ek: 1.20, vk: 4.00, fr: 3,   sa: 5,   so: 2   },
+  { id: 'soft',    name: 'Softdrinks',      menge: 0.33,einheit: 'l', ek: 0.60, vk: 3.00, fr: 1,   sa: 2,   so: 1   },
+  { id: 'wasser',  name: 'Wasser',          menge: 0.5, einheit: 'l', ek: 0.30, vk: 2.00, fr: 0.5, sa: 1,   so: 0.5 },
+  { id: 'schnaps', name: 'Schnaps / Shots', menge: 0.02,einheit: 'l', ek: 0.80, vk: 3.00, fr: 1,   sa: 2,   so: 0   },
+  { id: 'mix',     name: 'Mischgetraenke',  menge: 0.3, einheit: 'l', ek: 1.00, vk: 5.00, fr: 0.5, sa: 1,   so: 0   },
+];
+let nextProdId = 100;
+
+function eur(n) { return n.toLocaleString('de-DE', {minimumFractionDigits: 0, maximumFractionDigits: 0}) + ' \u20AC'; }
+function eur2(n) { return n.toLocaleString('de-DE', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' \u20AC'; }
+
+function renderProducts() {
+  const container = document.getElementById('sim-products');
+  container.innerHTML = '';
+  products.forEach((p, idx) => {
+    const card = document.createElement('div');
+    card.style.cssText = 'background:var(--bg);border-radius:8px;padding:16px;margin-bottom:12px;position:relative';
+    const marge = p.vk > 0 ? ((p.vk - p.ek) / p.vk * 100).toFixed(0) : 0;
+    const margeColor = marge >= 60 ? 'var(--success)' : marge >= 40 ? 'var(--warning)' : 'var(--danger)';
+    card.innerHTML = `
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+        <strong style="font-size:15px;flex:1">${p.name || 'Neues Getr\u00e4nk'}</strong>
+        <span style="font-size:13px;font-weight:700;color:${margeColor}">Marge: ${marge}%</span>
+        <button onclick="removeProduct(${idx})" style="background:none;border:none;color:var(--danger);cursor:pointer;font-size:18px;padding:0 4px" title="Entfernen">&times;</button>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px">
+        <div>
+          <label class="field-label">Name</label>
+          <input type="text" class="budget-input" value="${p.name}" onchange="products[${idx}].name=this.value;onSimChange()">
+        </div>
+        <div>
+          <label class="field-label">Menge</label>
+          <div style="display:flex;gap:4px">
+            <input type="number" class="budget-input" value="${p.menge}" step="0.01" min="0.01" style="flex:1" onchange="products[${idx}].menge=parseFloat(this.value)||0.1;onSimChange()">
+            <select class="budget-input" style="width:50px;text-align:left;padding:4px" onchange="products[${idx}].einheit=this.value;onSimChange()">
+              <option value="l" ${p.einheit==='l'?'selected':''}>l</option>
+              <option value="cl" ${p.einheit==='cl'?'selected':''}>cl</option>
+              <option value="ml" ${p.einheit==='ml'?'selected':''}>ml</option>
+              <option value="St" ${p.einheit==='St'?'selected':''}>St</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="field-label">EK / St&uuml;ck (&euro;)</label>
+          <input type="number" class="budget-input" value="${p.ek}" step="0.10" min="0" onchange="products[${idx}].ek=parseFloat(this.value)||0;onSimChange()">
+        </div>
+        <div>
+          <label class="field-label">VK / St&uuml;ck (&euro;)</label>
+          <input type="number" class="budget-input" value="${p.vk}" step="0.50" min="0" onchange="products[${idx}].vk=parseFloat(this.value)||0;onSimChange()">
+        </div>
+        <div>
+          <label class="field-label">Pro Besucher Fr</label>
+          <input type="number" class="budget-input" value="${p.fr}" step="0.5" min="0" onchange="products[${idx}].fr=parseFloat(this.value)||0;onSimChange()">
+        </div>
+        <div>
+          <label class="field-label">Pro Besucher Sa</label>
+          <input type="number" class="budget-input" value="${p.sa}" step="0.5" min="0" onchange="products[${idx}].sa=parseFloat(this.value)||0;onSimChange()">
+        </div>
+        <div>
+          <label class="field-label">Pro Besucher So</label>
+          <input type="number" class="budget-input" value="${p.so}" step="0.5" min="0" onchange="products[${idx}].so=parseFloat(this.value)||0;onSimChange()">
+        </div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function addProduct() {
+  nextProdId++;
+  products.push({ id: 'custom' + nextProdId, name: '', menge: 0.5, einheit: 'l', ek: 0, vk: 0, fr: 0, sa: 0, so: 0 });
+  renderProducts();
+  calcSim();
+  saveSim();
+}
+
+function removeProduct(idx) {
+  if (products.length <= 1) return;
+  products.splice(idx, 1);
+  renderProducts();
+  calcSim();
+  saveSim();
+}
+
+function mengeInLiter(menge, einheit) {
+  if (einheit === 'l') return menge;
+  if (einheit === 'cl') return menge / 100;
+  if (einheit === 'ml') return menge / 1000;
+  return 0; // Stueck = keine Liter
+}
+
+function calcSim() {
+  const besucher = [
+    parseFloat(document.getElementById('sim-besucher-fr')?.value) || 0,
+    parseFloat(document.getElementById('sim-besucher-sa')?.value) || 0,
+    parseFloat(document.getElementById('sim-besucher-so')?.value) || 0
+  ];
+  const dayKeys = ['fr', 'sa', 'so'];
+
+  let totalStueck = [0, 0, 0];
+  let totalUmsatz = [0, 0, 0];
+  let totalEK = [0, 0, 0];
+
+  // Einkaufsliste
+  const einkaufBody = document.getElementById('sim-einkauf-body');
+  einkaufBody.innerHTML = '';
+  let gesamtBedarf = 0, gesamtPuffer = 0, gesamtLiter = 0, gesamtEKGes = 0;
+
+  products.forEach(p => {
+    const perDay = [p.fr || 0, p.sa || 0, p.so || 0];
+    let bedarf = 0;
+    dayKeys.forEach((d, i) => {
+      const stueck = Math.round(besucher[i] * perDay[i]);
+      bedarf += stueck;
+      totalStueck[i] += stueck;
+      totalUmsatz[i] += stueck * (p.vk || 0);
+      totalEK[i] += stueck * (p.ek || 0);
+    });
+
+    const puffer = Math.ceil(bedarf * 1.15);
+    const liter = puffer * mengeInLiter(p.menge, p.einheit);
+    const ekGes = puffer * (p.ek || 0);
+
+    gesamtBedarf += bedarf;
+    gesamtPuffer += puffer;
+    gesamtLiter += liter;
+    gesamtEKGes += ekGes;
+
+    const mengeStr = p.einheit === 'St' ? 'Stueck' : p.menge + ' ' + p.einheit;
+    const literStr = p.einheit === 'St' ? '-' : liter.toFixed(1) + ' l';
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${p.name || '-'}</td><td>${mengeStr}</td><td>${bedarf}</td><td style="font-weight:700">${puffer}</td><td>${literStr}</td><td>${eur(Math.round(ekGes))}</td>`;
+    einkaufBody.appendChild(tr);
+  });
+
+  // Totals Einkaufsliste
+  document.getElementById('sim-bedarf-total').textContent = gesamtBedarf;
+  document.getElementById('sim-puffer-total').textContent = gesamtPuffer;
+  document.getElementById('sim-liter-total').textContent = gesamtLiter.toFixed(1) + ' l';
+  document.getElementById('sim-ekges-total').textContent = eur(Math.round(gesamtEKGes));
+
+  // Ergebnis pro Tag
+  let gStueck = 0, gUmsatz = 0, gEK = 0;
+  dayKeys.forEach((d, i) => {
+    const gewinn = totalUmsatz[i] - totalEK[i];
+    document.getElementById('sim-stueck-' + d).textContent = totalStueck[i];
+    document.getElementById('sim-umsatz-' + d).textContent = eur(Math.round(totalUmsatz[i]));
+    document.getElementById('sim-ek-' + d).textContent = eur(Math.round(totalEK[i]));
+    const el = document.getElementById('sim-gewinn-' + d);
+    el.textContent = eur(Math.round(gewinn));
+    el.style.color = gewinn >= 0 ? 'var(--success)' : 'var(--danger)';
+    gStueck += totalStueck[i]; gUmsatz += totalUmsatz[i]; gEK += totalEK[i];
+  });
+
+  const gGewinn = gUmsatz - gEK;
+  document.getElementById('sim-stueck-total').textContent = gStueck;
+  document.getElementById('sim-umsatz-total').textContent = eur(Math.round(gUmsatz));
+  document.getElementById('sim-ek-total').textContent = eur(Math.round(gEK));
+  const gewTot = document.getElementById('sim-gewinn-total');
+  gewTot.textContent = (gGewinn >= 0 ? '+' : '') + eur(Math.round(gGewinn));
+  gewTot.style.color = gGewinn >= 0 ? 'var(--success)' : 'var(--danger)';
+}
+
+function onSimChange() {
+  renderProducts();
+  calcSim();
+  clearTimeout(simTimer);
+  simTimer = setTimeout(saveSim, 500);
+}
+
+// Save/Load
+let simTimer;
+function saveSim() {
+  const data = {
+    products: products,
+    besucher: {
+      fr: document.getElementById('sim-besucher-fr')?.value,
+      sa: document.getElementById('sim-besucher-sa')?.value,
+      so: document.getElementById('sim-besucher-so')?.value
+    }
+  };
+  localStorage.setItem('festival49ers_sim', JSON.stringify(data));
+}
+
+function loadSim() {
+  try {
+    const saved = localStorage.getItem('festival49ers_sim');
+    if (saved) {
+      const data = JSON.parse(saved);
+      if (data.products && Array.isArray(data.products)) products = data.products;
+      if (data.besucher) {
+        if (data.besucher.fr) document.getElementById('sim-besucher-fr').value = data.besucher.fr;
+        if (data.besucher.sa) document.getElementById('sim-besucher-sa').value = data.besucher.sa;
+        if (data.besucher.so) document.getElementById('sim-besucher-so').value = data.besucher.so;
+      }
+    }
+  } catch(e) {}
+}
+
+// Besucher-Inputs
+document.querySelectorAll('#sim-besucher-fr,#sim-besucher-sa,#sim-besucher-so').forEach(el => {
+  el.addEventListener('input', () => {
+    calcSim();
+    clearTimeout(simTimer);
+    simTimer = setTimeout(saveSim, 500);
+  });
+});
+
+loadSim();
+renderProducts();
+calcSim();
+</script>
+</body>
+</html>

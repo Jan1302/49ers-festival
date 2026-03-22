@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programm - 49ers Festival 2027</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand"><img src="Logos/49ers_logo.jpg" alt="49ers" style="height:36px;border-radius:50%;margin-right:8px;vertical-align:middle"><span>Festival 2027</span></div>
+    <button class="burger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Uebersicht</a></li>
+      <li><a href="programm.html">Programm</a></li>
+      <li><a href="timeline.html">Timeline</a></li>
+      <li><a href="budget.html">Budget</a></li>
+      <li><a href="checkliste.html">Checkliste</a></li>
+      <li><a href="bezahlsystem.html">Bezahlsystem</a></li>
+      <li><a href="dienstleister.html">Dienstleister</a></li>
+      <li><a href="genehmigungen.html">Recht</a></li>
+      <li><a href="anfragen.html">Anfragen</a></li>
+      <li><a href="socialmedia.html">Social Media</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header style="background: linear-gradient(135deg, var(--primary) 0%, var(--accent2) 100%); color: #fff; padding: 32px 20px; text-align: center;">
+  <h1 style="font-size: clamp(22px, 4vw, 36px); font-weight: 900; letter-spacing: -0.5px; margin-bottom: 6px;">Programm &mdash; 3-Tage-Festival</h1>
+  <p style="opacity: 0.85; font-size: 15px;">07. &ndash; 09. August 2027 &middot; Motorsportarena Buseck-Oppenrod</p>
+</header>
+
+<!-- ══════════════════ PROGRAMM ══════════════════ -->
+<section class="section" id="programm">
+  <div class="container">
+
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab(event, 'freitag')">Freitag &mdash; Warm-Up</button>
+      <button class="tab" onclick="switchTab(event, 'samstag')">Samstag &mdash; Der gro&szlig;e Tag</button>
+      <button class="tab" onclick="switchTab(event, 'sonntag')">Sonntag &mdash; Ausklang</button>
+    </div>
+
+    <div class="tab-content active" id="freitag">
+      <div class="card">
+        <div class="schedule-item"><span class="schedule-time">14:00</span><span class="schedule-desc">Gel&auml;nde &ouml;ffnet, Check-in, Camping-Aufbau</span></div>
+        <div class="schedule-item"><span class="schedule-time">16:00</span><span class="schedule-desc">Mofa-Ausstellung er&ouml;ffnet</span></div>
+        <div class="schedule-item"><span class="schedule-time">17:00</span><span class="schedule-desc">49ers-Chronik-Ausstellung: <strong>&quot;10 Jahre in Bildern&quot;</strong></span></div>
+        <div class="schedule-item"><span class="schedule-time">18:00</span><span class="schedule-desc">Gemeinsames Grillen / Essensst&auml;nde &ouml;ffnen</span></div>
+        <div class="schedule-item"><span class="schedule-time">19:00</span><span class="schedule-desc"><strong>Er&ouml;ffnungsrede &amp; Gr&uuml;ndungsmitglieder-Ehrung</strong></span></div>
+        <div class="schedule-item"><span class="schedule-time">20:00</span><span class="schedule-desc"><strong>Live-Band #1</strong> (Akustik/Rock)</span></div>
+        <div class="schedule-item"><span class="schedule-time">22:00</span><span class="schedule-desc"><strong>DJ-Set</strong> bis open end</span></div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="samstag">
+      <div class="card">
+        <div class="schedule-item"><span class="schedule-time">09:00</span><span class="schedule-desc">Fr&uuml;hst&uuml;ck / Kaffee</span></div>
+        <div class="schedule-item"><span class="schedule-time">10:00</span><span class="schedule-desc"><strong>Mofa-Tour</strong> (30-50 km Rundkurs)</span></div>
+        <div class="schedule-item"><span class="schedule-time">12:30</span><span class="schedule-desc">R&uuml;ckkehr, Mittagessen</span></div>
+        <div class="schedule-item"><span class="schedule-time">13:30</span><span class="schedule-desc"><strong>Mofa-Schraubwettbewerb</strong></span></div>
+        <div class="schedule-item"><span class="schedule-time">14:30</span><span class="schedule-desc"><strong>Kartfahren</strong> (Wertungslauf)</span></div>
+        <div class="schedule-item"><span class="schedule-time">15:00</span><span class="schedule-desc">Kinderprogramm: H&uuml;pfburg, Schie&szlig;bude, Kinderschminken</span></div>
+        <div class="schedule-item"><span class="schedule-time">16:00</span><span class="schedule-desc"><strong>&quot;Pimp my Mofa&quot;</strong> &mdash; Publikumsvoting</span></div>
+        <div class="schedule-item"><span class="schedule-time">17:00</span><span class="schedule-desc">Mofa-Geschicklichkeitsparcours</span></div>
+        <div class="schedule-item"><span class="schedule-time">18:30</span><span class="schedule-desc">Abendessen / Foodtrucks</span></div>
+        <div class="schedule-item"><span class="schedule-time">19:30</span><span class="schedule-desc"><strong>Preisverleihung</strong> aller Wettbewerbe</span></div>
+        <div class="schedule-item"><span class="schedule-time">20:30</span><span class="schedule-desc"><strong>Live-Band #2</strong> (Rock/Pop Headliner)</span></div>
+        <div class="schedule-item"><span class="schedule-time">22:30</span><span class="schedule-desc"><strong>DJ-Set</strong> bis open end</span></div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="sonntag">
+      <div class="card">
+        <div class="schedule-item"><span class="schedule-time">09:00</span><span class="schedule-desc">Fr&uuml;hschoppen / Wei&szlig;wurstfr&uuml;hst&uuml;ck</span></div>
+        <div class="schedule-item"><span class="schedule-time">10:30</span><span class="schedule-desc">Mofa-Teilemarkt / Flohmarkt</span></div>
+        <div class="schedule-item"><span class="schedule-time">11:00</span><span class="schedule-desc"><strong>Letzte Mofa-Ausfahrt</strong> (15-20 km)</span></div>
+        <div class="schedule-item"><span class="schedule-time">12:30</span><span class="schedule-desc">Gemeinsames Mittagessen</span></div>
+        <div class="schedule-item"><span class="schedule-time">13:30</span><span class="schedule-desc"><strong>Danksagung, Gruppen-Foto, Verabschiedung</strong></span></div>
+        <div class="schedule-item"><span class="schedule-time">14:00</span><span class="schedule-desc">Abbau beginnt</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Floating Action Panel -->
+<div class="fab-panel" id="fabPanel">
+  <div class="fab-progress" id="fabProgressDisplay">
+    <div id="fabProgressText">0 / 0 erledigt</div>
+    <div class="fab-progress-bar-wrap">
+      <div class="fab-progress-bar-fill" id="fabProgressFill" style="width:0%"></div>
+    </div>
+  </div>
+  <div class="fab-buttons">
+    <button class="fab-btn fab-btn-save" onclick="exportJSON()" title="Status als JSON exportieren">
+      &#128190; Speichern
+    </button>
+    <button class="fab-btn fab-btn-load" onclick="document.getElementById('fabImportInput').click()" title="Status aus JSON importieren">
+      &#128194; Laden
+    </button>
+    <input type="file" id="fabImportInput" accept=".json" onchange="importJSON(event)">
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>10 Jahre Mofa Club 49ers &mdash; Festival 07.-09. August 2027</p>
+  <p>Motorsportarena Stefan Bellof, Stefan-Bellof-Str. 1, 35418 Buseck-Oppenrod</p>
+</footer>
+
+<script>
+function switchTab(e, day) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  e.target.classList.add('active');
+  document.getElementById(day).classList.add('active');
+}
+</script>
+<script src="festival.js"></script>
+
+</body>
+</html>
