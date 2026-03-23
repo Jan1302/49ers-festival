@@ -192,6 +192,10 @@
 
 <!-- Floating Action Panel -->
 <div class="fab-panel" id="fabPanel">
+  <div class="fab-name">
+    <label>Name:</label>
+    <input type="text" id="fab-username" placeholder="Dein Name...">
+  </div>
   <div style="display:flex;gap:8px">
     <button class="fab-btn fab-btn-save" onclick="exportJSON()" title="Status als JSON speichern">&#128190; Speichern</button>
     <button class="fab-btn fab-btn-load" onclick="document.getElementById('jsonImport').click()" title="Status aus JSON laden">&#128194; Laden</button>
